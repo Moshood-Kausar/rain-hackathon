@@ -8,8 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#F8C748" /* Yello */,
+        hoveredPrimary: "",
+        activePrimary: "",
+        lightYellow: "#FEF9ED",
+        darkYellow: "#",
+        hoveredDarkYellow: "",
+        activeDarkYellow: "",
+        secondary: "#303210" /* Green */,
+        lightGreen: "#EAEBE7",
+        darkGreen: "#"
       },
     },
   },
