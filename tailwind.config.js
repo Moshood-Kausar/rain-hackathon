@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#F8C748" /* Yello */,
+        primary: "#F8C748" /* Yellow */,
         hoveredPrimary: "",
         activePrimary: "",
         lightYellow: "#FEF9ED",
