@@ -1,5 +1,7 @@
 import About from "./components/About";
 import Category from "./components/Category";
+import HowToRegister from "./components/HowToRegister";
+import WhyParticipate from "./components/WhyParticipate";
 
 export default function Home() {
   return (
@@ -9,6 +11,10 @@ export default function Home() {
       <About />
 
       <Category />
+
+      <WhyParticipate />
+
+      <HowToRegister />
     </>
   );
 }

@@ -45,7 +45,6 @@ export default function Category() {
               <p className="font-normal ">{ item.label }</p>
             </div>
           ))}
-          
         </section>
 
         {/* <div className="grid grid-cols-3 gap-10 mt-10">
