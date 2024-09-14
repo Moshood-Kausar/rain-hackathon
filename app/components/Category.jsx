@@ -34,7 +34,7 @@ export default function Category() {
     <>
       <section className="px-4 md:px-10 lg:px-20 flex flex-col items-center gap-6">
         <div className={`flex flex-col items-center`}>
-          <h1 className={`font-bold sm:text-[24px] lg:text-[32px]`}>Categories</h1>
+          <h1 className={`font-bold text-[24px] lg:text-[32px]`}>Categories</h1>
           <p className={`font-normal text-[16px]`}>Pioneering the future future; AI and Robotics Solutions</p>
         </div>
 
