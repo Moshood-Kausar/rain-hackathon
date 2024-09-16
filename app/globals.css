@@ -7,3 +7,21 @@
     text-wrap: balance;
   }
 }
+
+.bg-hero {
+  background: radial-gradient(400.29% 178.88% at -2.4% -20.95%, #FEF9ED 19.45%, #FFEEC4 100%);
+}
+
+.text-hero {
+  background: linear-gradient(96deg, #F8C748 25.93%, #666828 46.98%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -o-background-clip: text;
+  -o-text-fill-color: transparent;
+}
+.hero-stat {
+  background: linear-gradient(133deg, #95772B -27.72%, #4C4E1C 39.19%, #666828 100.9%);
+}
