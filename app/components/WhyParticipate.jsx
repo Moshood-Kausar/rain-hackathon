@@ -37,7 +37,7 @@ export default function WhyParticipate() {
       </div>
 
       <main className="flex flex-col-reverse lg:flex-row gap-10">
-        <div className="w-1/2">
+        <div className="w-[100%] lg:w-1/2">
           <Image
             src="/participate.png"
             alt="image for the why participate section"
