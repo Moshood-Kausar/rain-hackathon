@@ -7,7 +7,7 @@ import trophy from '@/app/assets/trophy.png'
 
 export default function Prizes(){
   return (
-    <section className="px-4 md:px-10 lg:px-20">
+    <section className="px-4 md:px-10 lg:px-20 mb-[14px]">
         <h2 className='text-[32px] font-medium text-center'>
         Prizes
         </h2>
@@ -15,7 +15,7 @@ export default function Prizes(){
         <div className='flex flex-col md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-7 gap-4 md:gap-11 w-fit mx-auto'>
         <div className='order-0 md:order-1 lg:order-0 bg-primary rounded-lg max-w-[383px] px-3.5 xl:px-5 py-4 h-[calc(100%_-_16px)] md:h-[calc(100%_-_40px)] xl:h-[calc(100%_-_60px)] xl:my-auto'>
                 <div className='mb-4 flex items-center justify-start gap-2 text-xl'>
-                        <Image src={silver} alt='Gold Medal' width={180} height={143} className='w-[60px] h-auto' />
+                        <Image src={silver} alt='Silver Medal' width={180} height={143} className='w-[60px] h-auto' />
                         1st Runner Up
                 </div>
                 <div className='mt-[15px] mb-4 md:mb-[50px] md:px-5 text-dark'>
@@ -42,7 +42,7 @@ export default function Prizes(){
         </div>
         <div className=' md:order-1 lg:order-0 bg-primary rounded-lg max-w-[383px] px-3.5 xl:px-5 py-4 h-[calc(100%_-_16px)] md:h-[calc(100%_-_40px)] xl:h-[calc(100%_-_60px)] xl:my-auto'>
                 <div className='mb-4 flex items-center justify-start gap-2 text-xl'>
-                        <Image src={bronze} alt='Gold Medal' width={180} height={143} className='w-[60px] h-auto' />
+                        <Image src={bronze} alt='Bronze Medal' width={180} height={143} className='w-[60px] h-auto' />
                         2nd Runner Up
                 </div>
                 <div className='mt-[15px] mb-4 md:mb-[50px] md:px-5 text-dark'>
