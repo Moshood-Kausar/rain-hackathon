@@ -48,22 +48,22 @@ const Countdown = ({ targetDate }) => {
     <div
       className={`${poppins.className} flex justify-between shrink-0 w-full max-w-[274px] md:max-w-[370px] mx-auto pt-4 md:pt-0`}
     >
-      <div className="">
+      <div className="flex flex-col items-center">
         <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{days}</h4>
         <p className="text-xs md:text-sm text-center">days</p>
       </div>
       
-      <div className="">
+      <div className="flex flex-col items-center">
         <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{hours}</h4>
         <p className="text-xs md:text-sm text-center">hours</p>
       </div>
       
-      <div className="">
+      <div className="flex flex-col items-center">
         <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{minutes}</h4>
         <p className="text-xs md:text-sm text-center">minutes</p>
       </div>
       
-      <div className="">
+      <div className="flex flex-col items-center">
         <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{seconds}</h4>
         <p className="text-xs md:text-sm text-center">seconds</p>
       </div>
