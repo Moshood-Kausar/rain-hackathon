@@ -49,7 +49,7 @@ export default function WhyParticipate() {
         </div>
         
 
-        <div className="w-1/2 flex flex-col items-start justify-between">
+        <div className="w-[100%] lg:w-1/2 flex flex-col items-start justify-between">
           <div className="flex flex-col gap-10">
             {participateList.map((item, index) => (
               <div key={index} className="flex items-start gap-5">
