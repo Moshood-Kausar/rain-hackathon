@@ -14,17 +14,17 @@ export default function Category() {
       label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
     },
     {
-      id: 1,
+      id: 3,
       name: 'Health Care',
       label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
     },
     {
-      id: 2,
+      id: 4,
       name: 'E-Commerce',
       label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
     },
     {
-      id: 1,
+      id: 5,
       name: 'Special Education',
       label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
     }
@@ -40,7 +40,7 @@ export default function Category() {
 
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12">
           {categoryList.map((item, index) => (
-            <div key={index} className={`px-8 py-5 rounded-xl ${item.id === 1 ? 'bg-[#F8C748]' :'bg-gradient-to-br from-[#95772B] to-[#666828] text-white'}`}>
+            <div key={index} className={`px-8 py-5 rounded-xl max-w-[420px] ${item.id % 2 === 1 ? 'bg-[#F8C748]' :'bg-gradient-to-br from-[#95772B] to-[#666828] text-white'}`}>
               <h2 className="font-medium text-[20px] mb-2">{ item.name }</h2>
               <p className="font-normal ">{ item.label }</p>
             </div>

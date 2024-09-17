@@ -21,7 +21,7 @@ export default function Hero() {
           Innovate the Future
         </h2>
         <p className="text-xs md:text-base text-center mx-auto max-w-[80ch] z-20 relative mt-3">
-          Join us for the RAIN Hackathon 20244 where the brightest minds in
+          Join us for the RAIN Hackathon 2024 where the brightest minds in
           Robotics and Artificial intelligence will converge to tackle
           Africa&apos;s most pressing challenges
         </p>
