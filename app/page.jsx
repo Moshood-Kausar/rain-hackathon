@@ -5,6 +5,8 @@ import HowToRegister from "./components/HowToRegister";
 import Navbar from "./components/Navbar";
 import Prizes from "./components/Prizes";
 import WhyParticipate from "./components/WhyParticipate";
+import TeamGuide from "./components/TeamGuide";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -21,8 +23,12 @@ export default function Home() {
           <Category />
           <WhyParticipate />
           <Prizes />
+          <TeamGuide />
           <HowToRegister />
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </main>
   );
