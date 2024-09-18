@@ -2,33 +2,46 @@ import Image from "next/image";
 
 export default function TeamGuide() {
 
-  const guideline = []
+  const guideline = [
+    {
+      id: 1,
+      title: "Team Size",
+      label: "Maximum of 3 members per team"
+    },
+    {
+      id: 2,
+      title: "Eligibility",
+      label: "Open to students, professionals and tech enthusiasts with a passion for solving real-world problem"
+    }
+  ]
 
   return (
-    <section>
-      <div>
-        <h1 className="">Team guideline</h1>
+    <section className="px-4 md:px-10 lg:px-20 py-3 flex flex-col md:flex-row items-center justify-between">
+      <div className="flex flex-col gap-5">
+        <h1 className="font-medium text-[32px]">Team guideline</h1>
 
-        <div>
-          <div className="w-5 h-5 rounded-full bg-black"></div>
+        <ul className="flex flex-col gap-3">
+          {guideline.map((item, index) => {
+            return (
+              <li key={index} className="flex items-start">
+                <span className="text-4xl text-black mr-2">•</span> {/* Custom big dot */}
 
-          <div>
-            <h2>Team Size</h2>
-            <p>Maximum of 3 members per team</p>
-          </div>
-        </div>
-
-        <div>
-          <div className="w-5 h-5 rounded-full bg-black"></div>
-
-          <div>
-            <h2>Eligibility</h2>
-            <p>Open to students, professionals and tech enthusiasts with a passion for solving real-world problem </p>
-          </div>
-        </div>
+                <div>
+                  <h2 className="text-lg font-medium">{item.title}</h2>
+                  <p className="text-[16px] font-normal">{item.label}</p>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
       </div>
 
-      <Image />
+      <Image
+        src="/Team-guide.png"
+        alt="Team guide"
+        width={300}
+        height={300}
+      />
     </section>
   )
 }

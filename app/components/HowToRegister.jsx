@@ -24,7 +24,7 @@ export default function HowToRegister() {
   ]
 
   return (
-    <section className="px-4 md:px-10 lg:px-20 gap-10 lg:gap-20 mb-10">
+    <section className="px-4 md:px-10 lg:px-20 gap-10 lg:gap-20 mb-10" id="how-to-register">
       <main>
         <h2 className={`font-bold text-[24px] lg:text-[32px] mb-5`}>How to register</h2>
 

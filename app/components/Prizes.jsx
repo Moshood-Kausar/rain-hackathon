@@ -7,11 +7,11 @@ import trophy from '@/app/assets/trophy.png'
 
 export default function Prizes(){
   return (
-    <section className="px-4 md:px-10 lg:px-20 mb-[14px]">
-        <h2 className='text-[32px] font-medium text-center'>
-        Prizes
-        </h2>
-        <p className='text-dark text-center'>Our whooping prices; one of the best hackhaton ever</p>
+    <section id='prizes' className="px-4 md:px-10 lg:px-20 mb-[14px]">
+        <h2 className="w-fit text-center text-dark mx-auto text-lg md:text-[32px] font-medium flex items-center">
+            Prizes
+          </h2>
+        <p className='text-dark text-center text-sm md:text-base'>Our whooping prices; one of the best hackhaton ever</p>
         <div className='flex flex-col md:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-7 gap-4 md:gap-11 w-fit mx-auto'>
         <div className='order-0 md:order-1 lg:order-0 bg-primary rounded-lg max-w-[383px] px-3.5 xl:px-5 py-4 h-[calc(100%_-_16px)] md:h-[calc(100%_-_40px)] xl:h-[calc(100%_-_60px)] xl:my-auto'>
                 <div className='mb-4 flex items-center justify-start gap-2 text-xl'>

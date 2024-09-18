@@ -1,9 +1,11 @@
 import About from "./components/About";
 import Category from "./components/Category";
+import { FAQS } from "./components/Faqs";
 import Hero from "./components/Hero";
 import HowToRegister from "./components/HowToRegister";
 import Navbar from "./components/Navbar";
 import Prizes from "./components/Prizes";
+import Timeline from "./components/Timeline";
 import WhyParticipate from "./components/WhyParticipate";
 import TeamGuide from "./components/TeamGuide";
 import Footer from "./components/Footer";
@@ -25,6 +27,8 @@ export default function Home() {
           <Prizes />
           <TeamGuide />
           <HowToRegister />
+          <Timeline />
+          <FAQS />
         </div>
       </div>
       <div>

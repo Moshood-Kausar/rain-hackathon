@@ -10,34 +10,34 @@ import { AiFillInstagram } from "react-icons/ai";
 export default function Footer() {
   return (
     <footer className="footer bg-primary flex items-center justify-center py-8">
-      <div className="flex flex-col gap-4 w-[50vw] gap-4">
+      <div className="flex flex-col gap-4 w-[95vw] md:w-[70vw] lg:w-[50vw]">
         <div className="flex items-center justify-between">
-          <p>Join RAIN-INNetwork today!</p>
+          <p className="text-[12px]">Join RAIN-INNetwork today!</p>
 
           <Link className="flex" href={`https://rain-innetwork.com`}>
             <Image src="/website-link.svg" alt="Link-icon" width={14} height={14}/>
-            <p>rain-innetwork.com</p>
+            <p className="text-[12px]">rain-innetwork.com</p>
           </Link>
         </div>
 
         <div className="bg-white flex items-center justify-between rounded-lg py-4 px-2 gap-5">
-          <p className="text-primary">Follow Us!</p>
+          <p className="text-primary text-[10px]">Follow Us!</p>
 
           <div className="flex items-center gap-1.5">
             <Link href={`https://x.com`}>
-              <FaXTwitter />
+              <FaXTwitter className="text-xl"/>
             </Link>
 
             <Link href={`https://instagram.com`}>
-              <AiFillInstagram />
+              <AiFillInstagram className="text-xl"/>
             </Link>
             
-            <p>@rain_innetwork</p>
+            <p className="font-medium text-[10px]">@rain_innetwork</p>
           </div>
 
           <Link className="flex items-center gap-1.5" href={`https://www.linkedin.com`}>
-            <FaLinkedin />
-            <p>Robotics and Artificial intelligence</p>
+            <FaLinkedin className="text-3xl"/>
+            <p className="text-[10px] md:text-[24px]">Robotics and Artificial intelligence</p>
           </Link>
         </div>
       </div>
