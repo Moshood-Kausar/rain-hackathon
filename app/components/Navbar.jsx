@@ -1,5 +1,6 @@
 import Link from "next/link";
 import logo from "@/app/assets/rain-logo.png";
+import logo from "@/app/assets/rain-logo.png";
 import Image from "next/image";
 import RegisterButton from "./RegisterBtn";
 
@@ -34,3 +35,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
