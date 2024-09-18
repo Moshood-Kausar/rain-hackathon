@@ -1,30 +1,31 @@
-import Image from "next/image"
+import Image from "next/image";
+import RegisterBtn from "./RegisterBtn"
 
 export default function WhyParticipate() {
 
   const participateList = [
     {
       id: 1,
-      image: '/Group 7.svg',
+      image: '/participate-1.svg',
       title: "Collaborate and innovate",
       label: "Work with diverse group of talented individuals, all passionate about making a difference"
     },
     {
       id: 2,
-      image: '/Group 7-1.svg',
+      image: '/participate-2.svg',
       title: "Showcase your skills",
       label: "This is your opportunity to showcase your skills in AI, Robotics and innovation"
     },
     {
       id: 3,
-      image: '/Group 7-2.svg',
+      image: '/participate-3.svg',
       title: "Network with expert",
       label: "This is your opportunity to showcase your skills in AI, Robotics and innovation"
     },
     {
 
       id: 4,
-      image: '/Group 7-3.svg',
+      image: '/participate-4.svg',
       title: "Win Big",
       label: "Compete for a chance to win big, 1st place goes with a whooping sum of 1 million Naira, 2nd place 750 thousand Naira and 3rd place 500 thousand Naira"
     }
@@ -53,13 +54,16 @@ export default function WhyParticipate() {
           <div className="flex flex-col gap-10">
             {participateList.map((item, index) => (
               <div key={index} className="flex items-start gap-5">
-                <Image
-                  src={item.image}
-                  alt="benefit icons"
-                  layout="intrinsic"
-                  width={30} height={30}
-                  className="object-contain mt-1"
-                />
+                <div className="p-4 bg-primary rounded-full">
+                  <Image
+                    src={item.image}
+                    alt="benefit icons"
+                    layout="intrinsic"
+                    width={25} height={25}
+                    className="object-contain mt-1"
+                  />
+                </div>
+                
 
                 <div className="">
                   <h3 className="font-bold text-[20px]">{item.title}</h3>
@@ -69,7 +73,7 @@ export default function WhyParticipate() {
             ))}
           </div>
 
-          <button>Register</button>
+          <RegisterBtn />
         </div>
       </main>
     </section>

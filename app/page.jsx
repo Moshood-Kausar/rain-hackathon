@@ -7,6 +7,8 @@ import Navbar from "./components/Navbar";
 import Prizes from "./components/Prizes";
 import Timeline from "./components/Timeline";
 import WhyParticipate from "./components/WhyParticipate";
+import TeamGuide from "./components/TeamGuide";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -23,10 +25,14 @@ export default function Home() {
           <Category />
           <WhyParticipate />
           <Prizes />
+          <TeamGuide />
           <HowToRegister />
           <Timeline />
           <FAQS />
         </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </main>
   );
