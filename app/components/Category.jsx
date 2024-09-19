@@ -37,7 +37,7 @@ export default function Category() {
           <h1 className={`font-bold text-[24px] lg:text-[32px]`}>Categories</h1>
           <p className={`font-normal text-[16px]`}>Pioneering the future future; AI and Robotics Solutions</p>
         </div>
-
+        {/* An important note, for semantic html, section is not suppose to be inside another section, you want to use div for the below division/section  */}
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12">
           {categoryList.map((item, index) => (
             <div key={index} className={`px-8 py-5 rounded-xl max-w-[420px] ${item.id % 2 === 1 ? 'bg-[#F8C748]' :'bg-gradient-to-br from-[#95772B] to-[#666828] text-white'}`}>
