@@ -73,7 +73,9 @@ export default function WhyParticipate() {
             ))}
           </div>
 
-          <RegisterBtn />
+          <div className="mt-5 lg:mt-0">
+            <RegisterBtn />
+          </div>
         </div>
       </main>
     </section>
