@@ -16,11 +16,11 @@ export default function TeamGuide() {
   ]
 
   return (
-    <section className="px-4 md:px-10 lg:px-20 py-3 flex flex-col md:flex-row items-center justify-between">
+    <section className="px-4 md:px-10 lg:px-20 py-3 my-7 flex flex-col md:flex-row items-start md:items-center justify-between">
       <div className="flex flex-col gap-5">
         <h1 className="font-medium text-[32px]">Team guideline</h1>
 
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-3 w-[90%]">
           {guideline.map((item, index) => {
             return (
               <li key={index} className="flex items-start">
@@ -39,8 +39,9 @@ export default function TeamGuide() {
       <Image
         src="/Team-guide.png"
         alt="Team guide"
-        width={300}
+        width={200}
         height={300}
+        className="my-5"
       />
     </section>
   )
