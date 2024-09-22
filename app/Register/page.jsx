@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import FormHeader from '../components/Form/Header ';
+import Image from 'next/image';
+import logo from "@/app/assets/register-logo.png";
 import Step1 from '@/app/components/Form/Step1';
 import Step2 from '@/app/components/Form/Step2';
 import Step3 from '@/app/components/Form/Step3';
@@ -27,14 +28,20 @@ export default function Registration() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-xl p-5 bg-white rounded-lg shadow-lg">
-        <FormHeader />
+    <main className="min-h-screen flex items-center justify-center">
+      <div className="w-full max-w-xl p-5 ">
+        <div className="w-full flex items-center justify-center mb-20">
+          <Image
+            src={logo}
+            alt="RAIN-IN logo on the registration page"
+          />
+        </div>
+        
         <StepIndicator currentStep={step} />
         {step === 1 && <Step1 formData={formData} handleFormChange={handleFormChange} nextStep={nextStep} />}
         {step === 2 && <Step2 formData={formData} handleFormChange={handleFormChange} nextStep={nextStep} prevStep={prevStep} />}
         {step === 3 && <Step3 formData={formData} handleFormChange={handleFormChange} prevStep={prevStep} />}
       </div>
-    </div>
+    </main>
   );
 }
