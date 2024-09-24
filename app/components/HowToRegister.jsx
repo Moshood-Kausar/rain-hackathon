@@ -26,7 +26,7 @@ export default function HowToRegister() {
   return (
     <section className="px-4 md:px-10 lg:px-20 gap-10 lg:gap-20 mb-10" id="how-to-register">
       <main>
-        <h2 className={`font-bold text-[24px] lg:text-[32px] mb-5`}>How to register</h2>
+        <h2 className={`text-dark text-lg md:text-[32px] font-medium mb-20`}>How to register</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {registeringSteps.map((item, index) => (
@@ -40,7 +40,7 @@ export default function HowToRegister() {
               />
 
               {/* <div> */}
-                <h3 className="font-bold text-[20px] mt-5">{item.title}</h3>
+                <h3 className="font-medium text-[20px] mt-5">{item.title}</h3>
                 <p>{item.label}</p>
               {/* </div> */}
             </div>

@@ -2,8 +2,8 @@ import { FlowCurve, FlowCurveReverse, FlowSnake, FlowStraight } from "../assets/
 
 export default function Timeline(){
     return (
-        <section className="px-4 md:px-10 gap-10 lg:gap-20" id="timeline">
-            <h2 className="w-fit text-center text-dark mx-auto text-lg md:text-[32px] font-medium flex items-center mb-[14px]">
+        <section className="px-4 md:px-10 gap-10 lg:gap-20 my-20" id="timeline">
+            <h2 className="w-fit text-center text-dark mx-auto text-lg md:text-[32px] font-medium flex items-center mb-20">
             Timeline
           </h2>
             <div className="flex flex-col w-full md:w-fit mx-auto max-w-[430px] md:max-w-[1100px] xl:max-w-full">

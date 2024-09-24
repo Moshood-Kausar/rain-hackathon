@@ -7,7 +7,7 @@ export default function Step2({ formData, handleFormChange, nextStep, prevStep }
       <div className="mb-4">
         <label className="block mb-2">Total Members</label>
         <select value={formData.totalMembers} onChange={handleFormChange('totalMembers')} className="w-full p-2 border rounded">
-          {[1, 2, 3, 4, 5].map((number) => (
+          {[1, 2, 3, 4].map((number) => (
             <option key={number} value={number}>{number}</option>
           ))}
         </select>
