@@ -34,7 +34,7 @@ export default function WhyParticipate() {
   return (
     <section className="flex flex-col items-center px-4 md:px-10 lg:px-20 gap-6 my-8 md:my-32">
       <div>
-        <h2 className={`font-medium text-[18px] lg:text-[32px]`}>Why Participate?</h2>
+        <h2 className={`font-medium text-lg md:text-[32px]`}>Why Participate?</h2>
       </div>
 
       <main className="flex flex-col-reverse lg:flex-row gap-10">

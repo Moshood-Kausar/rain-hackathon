@@ -6,6 +6,8 @@ import Image from "next/image";
 import rocket from "@/app/assets/rocket.png";
 import planet1 from "@/app/assets/planet-1.png";
 import planet2 from "@/app/assets/planet-2.png";
+import logo from "@/app/assets/rain-logo.png";
+
 
 export default function UseCountdown() {
   return (
@@ -13,7 +15,12 @@ export default function UseCountdown() {
       <main className="container mx-auto pt-[72px] pb-4 md:pb-[105px] px-4 md:px-10 lg:px-20 bg-[url('/hero-stars.png')] h-screen w-screen relative top-0 left-0">
         {/* <Navbar /> */}
         <div className="w-full h-full flex flex-col items-center justify-center">
-           <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
+          
+          < Image
+            src={logo}
+            className="w-[100px] mb-20" />
+
+          <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
               Oct 1st - Jan 31st 2025
           </h1>
           <p className="mb-5 -mt-3">Let countdown till the First of October</p>
