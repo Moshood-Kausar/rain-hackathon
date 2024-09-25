@@ -5,19 +5,39 @@ import { Minus, Plus } from "../assets/svg";
 const faqData = [
   {
     title: "Can I apply as an individual?",
-    content: "Gather your friends, colleauges or enthustiast, choose a team leader who will serve as point of contact, choose a team",
+    content: "Yes, individuals can apply as a one-person team.",
   },
   {
-    title: "Can I apply as an individual?",
-    content: "Gather your friends, colleauges or enthustiast, choose a team leader who will serve as point of contact, choose a team",
+    title: "Are there any specifications for MVP?",
+    content: "Yes, MVPs should be functional prototypes that demonstrate the core value and application of AI and Robotics in addressing the chosen challenge.",
   },
   {
-    title: "Can I apply as an individual?",
-    content: "Gather your friends, colleauges or enthustiast, choose a team leader who will serve as point of contact, choose a team",
+    title: "Is there a registration fee?",
+    content: "No, registration for the hackathon is completely free.",
   },
   {
-    title: "Can I apply as an individual?",
-    content: "Gather your friends, colleauges or enthustiast, choose a team leader who will serve as point of contact, choose a team",
+    title: "What are the criteria for judging the MVPs?",
+    content: "MVPs will be evaluated based on innovation, functionality, feasibility, and the potential impact of the solution.",
+  },
+  {
+    title: "What is the deadline for submitting proposals?",
+    content: "The deadline for submitting proposals is October 28th, so make sure your team submits on time!",
+  },
+  {
+    title: "Can I make changes to my team after registration?",
+    content: "No, team members cannot be changed after registration. Ensure your team is finalized before submitting your application.",
+  },
+  {
+    title: "Is prior experience in AI and Robotics required?",
+    content: "No, participants of all skill levels are welcome, from beginners to experts.",
+  },
+  {
+    title: "What support is provided during the hackathon?",
+    content: "Mentors and experts in AI and Robotics will be available to provide guidance and answer questions throughout the hackathon.",
+  },
+  {
+    title: "How will the winners be announced?",
+    content: "Winners will be announced at the end of the live presentation phase, with further details to be communicated to all participants.",
   }
 ];
 
@@ -35,7 +55,7 @@ const FAQ = ({ title, content }) => {
         <p className="text-sm md:text-lg font-medium text-dark transition duration-300">
           {title}
         </p>
-        <div className="flex w-12 justify-end transition duration-300">
+        <div className="flex w-10 justify-end transition duration-300">
           {isActive? <Minus /> : <Plus />}
         </div>
       </div>
@@ -48,7 +68,7 @@ const FAQ = ({ title, content }) => {
       >
         <p
           aria-hidden={isActive}
-          className={`text-sm md:text-base text-dark overflow-hidden pr-[18px]`}
+          className={`text-xs md:text-base text-dark overflow-hidden pr-[18px]`}
         >
           {content}
         </p>
@@ -62,7 +82,7 @@ export const FAQS = () => {
   return (
     <section
       id="faqs"
-      className="container mx-auto mt-[50px] px-4 md:px-10 lg:px-20 mb-[50px] md:mb-8"
+      className="container mx-1 mt-[50px] px-6 md:px-10 lg:px-20 mb-[50px] md:mb-8"
     >
       <div className="flex flex-col">
         <div className="w-full mx-auto text-center">

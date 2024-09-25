@@ -16,8 +16,8 @@ export default function Timeline(){
                     <FlowCurve />
                     <div className="gradient-dark py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-white flex flex-col items-center mt-5 ml-2">
                         <h3 className="text-sm md:text-xl font-medium text-center">Review of Proposals</h3>
-                        <p className="text-center text-xs md:text-base">Oct 1st - Oct 28th</p>
-                        <p className="text-center text-xs md:text-base">1 month</p>
+                        <p className="text-center text-xs md:text-base">Oct 28th - Nov 10th</p>
+                        <p className="text-center text-xs md:text-base">2 weeks</p>
                     </div>
                 </div>
                 <div className="mr-0 md:ml-[250px] mt-6 flex">
@@ -25,7 +25,7 @@ export default function Timeline(){
                         <FlowCurve />
                     </div>
                     <div className="gradient-primary py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-dark flex flex-col items-center mt-4 md:mt-5 mr-2 md:mr-0 md:ml-2">
-                        <h3 className="text-sm md:text-xl font-medium text-center">Announcement of top 50 to build MVPs</h3>
+                        <h3 className="text-sm md:text-xl font-medium text-center">Announcement of Shortlistd Teams</h3>
                         <p className="text-center text-xs md:text-base">Nov 11th</p>
                         <p className="text-center text-xs md:text-base">A day</p>
                     </div>
@@ -49,9 +49,9 @@ export default function Timeline(){
                         <FlowSnake />
                     </div>
                     <div className="gradient-primary py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-dark flex flex-col items-center mt-4 md:mt-4 xl:mt-5 mr-2 md:mr-0 md:ml-2">
-                        <h3 className="text-sm md:text-xl font-medium text-center">Review of 50 MVPs to top 10</h3>
-                        <p className="text-center text-xs md:text-base">Nov 12th - Dec 15th</p>
-                        <p className="text-center text-xs md:text-base">1 month</p>
+                        <h3 className="text-sm md:text-xl font-medium text-center">Review of MVPs: Top 10 Selections</h3>
+                        <p className="text-center text-xs md:text-base">Dec 16th - Jan 5th</p>
+                        <p className="text-center text-xs md:text-base">3 weeks</p>
                     </div>
                     <div className="flex md:hidden">
                         <FlowCurveReverse />
@@ -65,7 +65,7 @@ export default function Timeline(){
                         <FlowSnake />
                     </div>
                     <div className="gradient-dark py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-white flex flex-col items-center mt-4 md:mt-4 xl:mt-5 ml-2">
-                        <h3 className="text-sm md:text-xl font-medium text-center min-w-[14ch]">Perfection of top 10 MVPs</h3>
+                        <h3 className="text-sm md:text-xl font-medium text-center min-w-[14ch]">Perfection of Top 10 MVPs</h3>
                         <p className="text-center text-xs md:text-base">Jan 6th - Jan 20th</p>
                         <p className="text-center text-xs md:text-base">2 weeks</p>
                     </div>
@@ -80,7 +80,7 @@ export default function Timeline(){
                     <div className="gradient-primary py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-dark flex flex-col items-center mt-4 mr-2 md:mr-0">
                         <h3 className="text-sm md:text-xl font-medium text-center">Live presentation</h3>
                         <p className="text-center text-xs md:text-base">Jan 20th - Jan 31st</p>
-                        <p className="text-center text-xs md:text-base">A day in-between</p>
+                        <p className="text-center text-xs md:text-base">Flexible dates within this range</p>
                     </div>
                 </div>
             </div>

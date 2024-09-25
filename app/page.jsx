@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-screen">
       <div className="bg-hero">
         <div className="bg-[url('/hero-stars.png')]">
           <Navbar />

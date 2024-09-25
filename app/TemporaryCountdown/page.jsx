@@ -7,6 +7,7 @@ import rocket from "@/app/assets/rocket.png";
 import planet1 from "@/app/assets/planet-1.png";
 import planet2 from "@/app/assets/planet-2.png";
 import logo from "@/app/assets/rain-logo.png";
+import Link from "next/link";
 
 
 export default function UseCountdown() {
@@ -23,34 +24,12 @@ export default function UseCountdown() {
           <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
               Oct 1st - Jan 31st 2025
           </h1>
-          <p className="mb-5 -mt-3">Let countdown till the First of October</p>
-          {/* <h2 className="text-2xl leading-normal md:text-[64px] text-dark max-w-[26ch] mx-auto text-center">
-            Join the <span className="text-hero">RAIN</span> Hackathon 2024:
-            Innovate the Future
-          </h2>
-          <p className="text-xs md:text-base text-center mx-auto max-w-[80ch] z-20 relative mt-3">
-            Join us for the RAIN Hackathon 2024 where the brightest minds in
-            Robotics and Artificial intelligence will converge to tackle
-            Africa&apos;s most pressing challenges
-          </p>
-          <div className="flex w-[60%] md:w-[55%] mt-[11px] mb-[54px]">
-            <div className="flex relative w-full max-w-[490px] ml-auto">
-              <div className="absolute -bottom-16 md:-bottom-[134px] flex flex-col justify-center items-center text-center hero-stat rounded-full text-[10px] md:text-base text-[#EEE] w-fit h-fit min-w-[60px] md:min-w-[90px] aspect-square">
-                1million+
-                <span className="text-[10px] md:text-sm font-light">prizes</span>
-              </div>
-              <div className="flex flex-col justify-center items-center text-center hero-stat rounded-full text-[10px] md:text-base text-[#EEE] w-fit h-fit min-w-[60px] md:min-w-[90px] -mr-[45px] ml-auto mt-8 aspect-square">
-                10
-                <span className="text-[10px] md:text-sm font-light">days</span>
-              </div>
-              <div className="flex flex-col justify-center items-center text-center hero-stat rounded-full text-[10px] md:text-base text-[#EEE] w-fit h-fit min-w-[60px] md:min-w-[90px] ml-auto aspect-square">
-                40+
-                <span className="text-[10px] md:text-sm font-light">schools</span>
-              </div>
-            </div>
-          </div> */}
+          <p className="mb-5 -mt-3">The registeration countdown is on....</p>
+          
           
           <TemporaryCountdown targetDate="2024-10-01T00:00:00" />
+
+          <Link href='/' className="bg-dark text-sm text-white py-3 px-6 rounded-lg mt-8">Go to Home</Link>
         </div>
         
         <Image

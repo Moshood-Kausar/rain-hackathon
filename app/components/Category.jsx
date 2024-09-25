@@ -5,37 +5,37 @@ export default function Category() {
   const categoryList = [
     {
       id: 1,
-      name: 'National Security',
-      label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
+      name: 'Food Security',
+      label: 'How can we leverage technology to ensure a sustainable and resilient food supply for Africa’s growing population?',
     },
     {
       id: 2,
-      name: 'Food And Securiy',
-      label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
+      name: 'National Security',
+      label: 'What AI and Robotics innovations can enhance national safety and security in an increasingly complex world?',
     },
     {
       id: 3,
-      name: 'Health Care',
-      label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
+      name: 'Healthcare',
+      label: 'How can technology revolutionize healthcare systems to improve accessibility and patient outcomes?',
     },
     {
       id: 4,
       name: 'E-Commerce',
-      label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
+      label: 'How can we leverage AI and Robotics to create smarter, more efficient e-commerce solutions?',
     },
     {
       id: 5,
       name: 'Special Education',
-      label: 'How can we ensure a sustainable and resilient food supply for our growing population?',
-    }
+      label: 'How can we develop tools to empower and enhance the learning experience for students with special needs?',
+    },
   ]
 
   return (
     <>
       <section className="px-4 md:px-10 lg:px-20 flex flex-col items-center gap-6">
         <div className={`flex flex-col items-center`}>
-          <h1 className={`font-medium text-[24px] lg:text-[32px]`}>Categories</h1>
-          <p className={`font-normal text-xs md:text-[16px] text-center`}>Pioneering the future future; AI and Robotics Solutions</p>
+          <h1 className={`font-medium text-[18px] lg:text-[32px]`}>Categories</h1>
+          <p className={`text-xs md:text-[16px] text-center text-dark`}>Pioneering the future future; AI and Robotics Solutions</p>
         </div>
         {/* An important note, for semantic html, section is not suppose to be inside another section, you want to use div for the below division/section  */}
         <section className="grid grid-cols-1 mx-4 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12">

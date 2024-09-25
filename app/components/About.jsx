@@ -6,7 +6,7 @@ export default function About() {
       <div className="w-full lg:w-1/2">
         <h1 className="font-medium text-center md:text-start text-[18px] lg:text-[28px] mb-1">About Our Hackathon</h1>
 
-        <p className={` text-xs font-thin text-dark md:text-[16px]`}>{`Join us for the RAIN Hackathon 2024 where the brightest minds in Robotics and Artificial intelligence will converge to tackle Africa's most pressign challenges join us for the RAIN Hackathon 2024 where the brightest minds in Robotics and Artificial intelligence will converge to tackle Africa's most pressign challenges`}</p>
+        <p className={` text-xs font-thin text-dark md:text-[16px] text-center`}>{`Join the RAIN Hackathon 2024, where innovators and trailblazers in Robotics and Artificial Intelligence will come together to solve Africa’s most urgent challenges. This event is a melting pot for the brightest minds, offering a platform to create impactful solutions that shape the future of technology on the continent.`}</p>
       </div>
 
       <div className=" lg:w-1/2">
