@@ -6,12 +6,12 @@ export default function TeamGuide() {
     {
       id: 1,
       title: "Team Size",
-      label: "Maximum of 3 members per team"
+      label: "Maximum of 3 members in a team"
     },
     {
       id: 2,
       title: "Eligibility",
-      label: "Open to students, professionals and tech enthusiasts with a passion for solving real-world problem"
+      label: "Open to students, professionals, and tech enthusiasts with a passion for solving real-world problems in Africa."
     }
   ]
 
@@ -23,13 +23,14 @@ export default function TeamGuide() {
         <ul className="flex flex-col gap-3 w-[90%]">
           {guideline.map((item, index) => {
             return (
-              <li key={index} className="flex items-start">
-                <span className="text-4xl text-black mr-2">•</span> {/* Custom big dot */}
+              <li key={index} className="">
+                <div className="flex items-center">
+                  <span className="text-2xl text-black mr-2">•</span> {/* Custom big dot */}
 
-                <div>
-                  <h2 className="text-[16px] md:text-lg font-medium">{item.title}</h2>
-                  <p className="tetxt-xs md:text-[16px] text-dark">{item.label}</p>
+                  <h2 className="text-[14px] md:text-lg font-medium">{item.title}</h2>
                 </div>
+                
+                <p className="text-xs md:text-[16px] text-dark">{item.label}</p>
               </li>
             )
           })}
@@ -41,7 +42,7 @@ export default function TeamGuide() {
         alt="Team guide"
         width={200}
         height={300}
-        className="my-5"
+        className="hidden md:block my-5"
       />
     </section>
   )

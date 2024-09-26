@@ -20,7 +20,7 @@ export default function HowToRegister() {
       id: 3,
       image: "/step_3.png",
       title: "Register",
-      label: "Click on the button below and follow the steps to register,make sure ou upload proposal docunment .double check that all  information is correct, click Submit to complete registration"
+      label: "Click on the button below and follow the steps to register,make sure you upload proposal document, double check that all  information is correct. Click Submit to complete registration"
     },
   ]
 
@@ -36,7 +36,7 @@ export default function HowToRegister() {
                 src={item.image}
                 alt="steps to register"
                 // layout="responsive"
-                width={200} height={200}
+                width={120} height={120}
                 // className="w-full h-auto object-contain"
               />
 
