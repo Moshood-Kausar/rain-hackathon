@@ -21,7 +21,7 @@ export default function Hero() {
           Innovate the Future
         </h2>
         <p className="text-xs md:text-base text-center mx-auto max-w-[80ch] z-20 relative mt-3">
-          Be part of the RAIN Hackathon 2024, where the brightest minds in Robotics and Artificial Intelligence come together to tackle Africa's most pressing challenges. Innovate, collaborate, and shape the future of technology on the continent.
+          Be part of the RAIN Hackathon 2024, where the brightest minds in Robotics and Artificial Intelligence come together to tackle Africa&apos;s most pressing challenges. Innovate, collaborate, and shape the future of technology on the continent.
         </p>
         <div className="flex w-[60%] md:w-[55%] mt-[11px] mb-[54px]">
           <div className="flex relative w-full max-w-[490px] ml-auto">
