@@ -19,7 +19,7 @@ export default function Navbar() {
           width={399}
           height={118}
           alt="Rain Logo"
-          className="h-10 w-auto"
+          className="h-10 w-auto hidden md:block"
         />
       </Link>
       <ul className="hidden md:flex justify-between gap-10 lg:gap-[71px]">

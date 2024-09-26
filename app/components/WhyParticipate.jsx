@@ -27,14 +27,14 @@ export default function WhyParticipate() {
       id: 4,
       image: '/participate-4.svg',
       title: "Win Big",
-      label: "Compete for a chance to win big, 1st place goes with a whooping sum of 1 million Naira, 2nd place 750 thousand Naira and 3rd place 500 thousand Naira"
+      label: "Compete for a chance to win big, 1st place goes with a whooping sum of 1 mi"
     }
   ]
 
   return (
-    <section className="flex flex-col items-center px-4 md:px-10 lg:px-20 gap-10 my-20">
+    <section className="flex flex-col items-center px-4 md:px-10 lg:px-20 gap-6 my-8 md:my-32">
       <div>
-        <h2 className={`font-bold text-[24px] lg:text-[32px]`}>Why Participate?</h2>
+        <h2 className={`font-medium text-lg md:text-[32px]`}>Why Participate?</h2>
       </div>
 
       <main className="flex flex-col-reverse lg:flex-row gap-10">
@@ -45,37 +45,37 @@ export default function WhyParticipate() {
             layout="responsive"
             width={2}
             height={2}
-            // className="w-full h-auto object-contain"
+            className="px-5"
           />
         </div>
         
 
-        <div className="w-[100%] lg:w-1/2 flex flex-col items-start justify-between">
-          <div className="flex flex-col gap-10">
+        <div className="w-[100%] lg:w-1/2 flex flex-col items-start justify-between px-5">
+          <div className="flex flex-col gap-5">
             {participateList.map((item, index) => (
-              <div key={index} className="flex items-start gap-5">
-                <div className="p-4 bg-primary rounded-full">
+              <div key={index} className="flex justify-start items-start gap-5">
+                <div className="bg-primary p-2 rounded-full">
                   <Image
                     src={item.image}
                     alt="benefit icons"
                     layout="intrinsic"
-                    width={25} height={25}
-                    className="object-contain mt-1"
+                    width={15} height={15}
+                    className=""
                   />
                 </div>
                 
 
                 <div className="">
-                  <h3 className="font-bold text-[20px]">{item.title}</h3>
-                  <p>{item.label}</p>
+                  <h3 className="font-medium text-[16px] md:text-[20px]">{item.title}</h3>
+                  <p className="text-xs text-dark">{item.label}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 lg:mt-0">
+          {/* <div className="mt-5 lg:mt-0">
             <RegisterBtn />
-          </div>
+          </div> */}
         </div>
       </main>
     </section>
