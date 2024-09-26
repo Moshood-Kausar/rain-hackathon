@@ -19,6 +19,7 @@ export default function UseCountdown() {
           
           < Image
             src={logo}
+            alt="RAIN-IN"
             className="w-[100px] mb-20" />
 
           <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
