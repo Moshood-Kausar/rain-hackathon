@@ -1,6 +1,6 @@
 import Link from "next/link";
-import logo from "@/app/assets/rain-logo.png";
-import mobileLogo from "@/app/assets/inn-black.png"
+import logo from "@/app/assets/rain_logo2.png";
+import mobileLogo from "@/app/assets/rain_logo2.png"
 import Image from "next/image";
 import RegisterButton from "./RegisterBtn";
 
@@ -26,7 +26,7 @@ export default function Navbar() {
         <Image
           src={mobileLogo}
           alt="RAIN-IN logo"
-          width={24} height={24}
+          width={44} height={44}
           className="md:hidden"
         />
       </Link>
