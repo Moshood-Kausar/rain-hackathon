@@ -80,8 +80,8 @@ export default function Registration() {
 
   if (isCountdownVisible) {
     return (
-      <section className="bg-hero min-h-screen">
-      <main className="container mx-auto pt-[72px] pb-4 md:pb-[105px] px-4 md:px-10 lg:px-20 bg-[url('/hero-stars.png')] h-screen w-screen relative top-0 left-0">
+      <main className={`${poppins.className} bg-hero min-h-screen`}>
+      <section className="container mx-auto pt-[72px] pb-4 md:pb-[105px] px-4 md:px-10 lg:px-20 bg-[url('/hero-stars.png')] h-screen w-screen relative top-0 left-0">
         <div className="w-full h-full flex flex-col items-center justify-center">
           < Image
             src={logo}
@@ -91,30 +91,32 @@ export default function Registration() {
           <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
               Oct 1st - Jan 31st 2025
           </h1>
-          <p className="mb-5 -mt-3">The registration countdown is on....</p>
+          <p className="text-center mb-5 -mt-3">The registration countdown is on...</p>
           
           
           <div
-        className={`${poppins.className} flex justify-between gap-4 shrink-0 w-full max-w-[274px] md:max-w-[370px] mx-auto pt-4 md:pt-0`}
+        className={`flex justify-between gap-2 md:gap-4 w-full max-w-[370px] md:max-w-fit mx-auto pt-4 md:pt-0`}
       >
-        <div className="flex flex-col items-center p-2 md:p-5 bg-primary rounded-lg">
+        <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
           <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{days}</h4>
           <p className="text-xs md:text-sm text-center">days</p>
         </div>
         
-        <div className="flex flex-col items-center p-2 md:p-5 bg-primary rounded-lg">
+        <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
           <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{hours}</h4>
           <p className="text-xs md:text-sm text-center">hours</p>
         </div>
         
-        <div className="flex flex-col items-center p-2 md:p-5 bg-primary rounded-lg">
+        <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
           <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{minutes}</h4>
-          <p className="text-xs md:text-sm text-center">minutes</p>
+          <p className="text-xs md:text-sm text-center md:hidden">mins</p>
+          <p className="text-xs md:text-sm text-center hidden md:block">minutes</p>
         </div>
         
-        <div className="flex flex-col items-center p-2 md:p-5 bg-primary rounded-lg">
+        <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
           <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">{seconds}</h4>
-          <p className="text-xs md:text-sm text-center">seconds</p>
+          <p className="text-xs md:text-sm text-center md:hidden">secs</p>
+          <p className="text-xs md:text-sm text-center hidden md:block">seconds</p>
         </div>
       </div>
 
@@ -149,8 +151,8 @@ export default function Registration() {
           alt=""
           className="absolute top-2/3 right-12 animate-bounce-slowTop w-[45px] md:w-[110px] md:scale-90"
         />
-      </main>
-    </section>
+      </section>
+    </main>
     );
   }
 
