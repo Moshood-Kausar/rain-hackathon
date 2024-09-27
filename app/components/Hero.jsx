@@ -11,11 +11,6 @@ export default function Hero() {
         <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
             Oct 1st - Jan 31st 2025
         </h1>
-        {/* <h1 className="text-center mx-auto w-fit h-fit rounded-lg bg-gradient-to-r from-[#95772B] via-[#4C4E1C] to-[#666828] p-px mb-10">
-          <span className="flex bg-[#FEF9ED] bg-hero rounded-md px-[33px] pt-[9px] pb-[11px] text-dark">
-            Oct 1st - Jan 31st 2025
-          </span>
-        </h1> */}
         <h2 className="text-2xl leading-normal md:text-[64px] text-dark max-w-[26ch] mx-auto text-center">
           Join the <span className="text-hero">RAIN</span> Hackathon 2024:
           Innovate the Future
@@ -69,7 +64,6 @@ export default function Hero() {
         alt=""
         className="absolute top-2/3 right-12 animate-bounce-slowTop w-[45px] md:w-[110px] md:scale-90"
       />
-      <div></div>
     </section>
   );
 }

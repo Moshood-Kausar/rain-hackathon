@@ -30,7 +30,7 @@ export default function Navbar() {
           className="md:hidden"
         />
       </Link>
-      <ul className="hidden md:flex justify-between gap-10 lg:gap-[71px]">
+      <ul className="hidden md:flex justify-between gap-8 lg:gap-[71px]">
         {links.map((link, idx)=> (
             <li key={idx} className="text-dark">
           <Link href={link.href}>{link.label}</Link>

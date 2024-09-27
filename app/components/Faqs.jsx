@@ -45,7 +45,7 @@ const FAQ = ({ title, content }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div data-aos='fade-up' className="mx-auto mb-5 py-2.5 md:py-5 px-2 md:px-4 bg-white border border-[#95772B] rounded-md flex w-full max-w-[587px] flex-col transition duration-200">
+    <div className="mx-auto mb-5 py-2.5 md:py-5 px-2 md:px-4 bg-white border border-[#95772B] rounded-md flex w-full max-w-[587px] flex-col transition duration-200">
       <div
         onClick={() => {
           setIsActive(!isActive);
@@ -82,7 +82,7 @@ export const FAQS = () => {
   return (
     <section
       id="faqs"
-      className="container mx-1 mt-[50px] px-6 md:px-10 lg:px-20 mb-[50px] md:mb-8"
+      className="container mt-[50px] px-6 md:px-10 lg:px-20 mb-[50px] md:mb-8"
     >
       <div className="flex flex-col">
         <div className="w-full mx-auto text-center">
