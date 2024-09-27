@@ -25,7 +25,7 @@ export default function Timeline(){
                         <FlowCurve />
                     </div>
                     <div className="gradient-primary py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-dark flex flex-col items-center mt-4 md:mt-5 mr-2 md:mr-0 md:ml-2">
-                        <h3 className="text-sm md:text-xl font-medium text-center">Announcement of Shortlistd Teams</h3>
+                        <h3 className="text-sm md:text-xl font-medium text-center">Announcement of Shortlisted Teams</h3>
                         <p className="text-center text-xs md:text-base">Nov 11th</p>
                         <p className="text-center text-xs md:text-base">A day</p>
                     </div>
