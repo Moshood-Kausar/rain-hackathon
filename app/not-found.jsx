@@ -49,7 +49,7 @@ export default function NotFound() {
           </p>
           <div style={{ display: 'flex', gap: '1rem' }}>
             <Link href="/" style={{
-                backgroundColor: '#EE0768',
+                backgroundColor: '#000000',
                 borderRadius: '0.375rem',
                 padding: '0.5rem 1.25rem',
                 fontSize: '0.875rem',
