@@ -20,7 +20,7 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="bg-white w-[90%] md:w-full max-w-[587px] mx-auto flex flex-col md:flex-row items-center justify-between rounded-lg p-4 md:px-2 gap-2 md:gap-3">
+        <div className="bg-white w-[90%] md:w-full max-w-[578px] md:max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between rounded-lg p-4 md:px-2 gap-2 md:gap-3">
           <p className="font-medium text-[10px] md:text-[15px] lg:text-[20px] whitespace-nowrap">Follow Us!</p>
 
           <div className="flex flex-col lg:flex-row justify-between gap-2 md:gap-6">
