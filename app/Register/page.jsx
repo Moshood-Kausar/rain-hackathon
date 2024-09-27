@@ -118,8 +118,7 @@ export default function Registration() {
           <p className="text-xs md:text-sm text-center md:hidden">secs</p>
           <p className="text-xs md:text-sm text-center hidden md:block">seconds</p>
         </div>
-      </div>
-
+        </div>
           <Link href='/' className="bg-dark text-sm text-white py-3 px-6 rounded-lg mt-8">Go to Home</Link>
         </div>
         
