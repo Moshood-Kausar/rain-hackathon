@@ -54,13 +54,13 @@ export default function WhyParticipate() {
           <div className="flex flex-col gap-5">
             {participateList.map((item, index) => (
               <div key={index} className="flex justify-start items-start gap-2">
-                <div className="bg-primary p-2 rounded-full mt-1">
+                <div className="bg-primary flex justify-center items-center p-2 rounded-full mt-1">
                   <Image
                     src={item.image}
                     alt="benefit icons"
                     layout="intrinsic"
                     width={20} height={20}
-                    className=""
+                    className="min-w-4"
                   />
                 </div>
                 

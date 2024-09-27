@@ -33,7 +33,7 @@ export default function Timeline(){
                         <FlowCurveReverse />
                     </div>
                 </div>
-                <div className="ml-auto md:ml-[445px] mt-6 flex">
+                <div className="ml-auto md:ml-[385px] lg:ml-[445px] mt-6 flex">
                         <FlowCurve />
                     <div className="gradient-dark py-[15px] px-7 rounded-[10px] w-fit max-w-[245px] text-white flex flex-col items-center mt-4 md:mt-5 ml-2">
                         <h3 className="text-sm md:text-xl font-medium text-center">Building Phase</h3>

@@ -18,7 +18,7 @@ export default function Prizes(){
                 </div>
                 <div className='mt-[15px] mb-1 md:mb-[50px] md:px-5 text-dark'>
                     <h3 className='flex mx-auto w-fit items-center text-center text-[24px] md:text-[32px] font-medium'>750,000 <span className='ml-2 text-xl'>Naira</span></h3>
-                    <p className="text-xs md:text-sm">Absolutely! Your team is in the running to win a whopping 750,000 Naira. Picture yourself in the winner’s circle because it could be YOU!</p>
+                    <p className="text-xs md:text-sm">Absolutely! Your team is in the running to win a whopping 750,000 Naira. Picture yourself in the winner&apos;s circle because it could be YOU!</p>
                 </div>
         </div>
         <div className="order-0 xl:order-1 p-[2px] md:col-span-2 xl:col-span-1 mx-auto w-fit h-fit rounded-lg bg-gradient-to-r from-[#95772B] via-[#4C4E1C] to-[#666828]">
@@ -34,7 +34,7 @@ export default function Prizes(){
                 </div>
                 <div className='mb-3 md:mb-[66px] md:px-5'>
                     <h3 className='flex mx-auto w-fit items-center text-center text-[24px] md:text-[32px] font-medium'>1,000,000 <span className='ml-2 text-xl'>Naira</span></h3>
-                    <p className="text-xs md:text-sm">That’s right, 1 million Naira is up for grabs for the winning team, and it could be YOURS! Seize the chance to take home the grand prize!</p>
+                    <p className="text-xs md:text-sm">That&apos;s right, 1 million Naira is up for grabs for the winning team, and it could be YOURS! Seize the chance to take home the grand prize!</p>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@ export default function Prizes(){
             </div>
             <div className='mt-[15px] mb-1 md:mb-[50px] md:px-5 text-dark'>
                 <h3 className='flex mx-auto w-fit items-center text-center text-[24px] md:text-[32px] font-medium'>500,000 <span className='ml-2 text-xl'>Naira</span></h3>
-                <p className="text-xs">Your team has the opportunity to secure a prize of 500,000 Naira as the 2nd runner-up. Don’t miss your chance to grab this amazing prize!</p>
+                <p className="text-xs md:text-sm">Your team has the opportunity to secure a prize of 500,000 Naira as the 2nd runner-up. Don&apos;t miss your chance to grab this amazing prize!</p>
             </div>
         </div>
         </div>

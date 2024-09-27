@@ -8,6 +8,12 @@
   }
 }
 
+@layer base {
+  p {
+    line-height: normal !important;
+  }
+}
+
 * {
   scroll-behavior: smooth;
 }
