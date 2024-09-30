@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import logo from "@/app/assets/register-logo.png";
+import logo from "@/app/assets/rain_logo2.png";
 import Step1 from '@/app/components/Form/Step1';
 import Step2 from '@/app/components/Form/Step2';
 import Step3 from '@/app/components/Form/Step3';
@@ -86,7 +86,9 @@ export default function Registration() {
           < Image
             src={logo}
             alt="RAIN-IN"
-            className="w-[100px] mb-20" />
+            width={1944}
+            height={728}
+            className="w-[200px] mb-20" />
 
           <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
               Oct 1st - Jan 31st 2025

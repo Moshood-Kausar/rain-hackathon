@@ -1,6 +1,6 @@
 import Link from "next/link";
 import logo from "@/app/assets/rain_logo2.png";
-import mobileLogo from "@/app/assets/rain_logo2.png"
+import mobileLogo from "@/app/assets/rain-logo-sm.png";
 import Image from "next/image";
 import RegisterButton from "./RegisterBtn";
 
@@ -17,8 +17,8 @@ export default function Navbar() {
       <Link href={"/"} className="flex">
         <Image
           src={logo}
-          width={399}
-          height={118}
+          width={1944}
+          height={728}
           alt="Rain Logo"
           className="h-10 w-auto hidden md:block"
         />
@@ -26,8 +26,8 @@ export default function Navbar() {
         <Image
           src={mobileLogo}
           alt="RAIN-IN logo"
-          width={44} height={44}
-          className="md:hidden"
+          width={814} height={728}
+          className="h-10 w-auto md:hidden"
         />
       </Link>
       <ul className="hidden md:flex justify-between gap-8 lg:gap-[71px]">
