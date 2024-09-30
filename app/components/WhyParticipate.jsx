@@ -1,5 +1,4 @@
 import Image from "next/image";
-import RegisterBtn from "./RegisterBtn"
 
 export default function WhyParticipate() {
 
@@ -38,14 +37,14 @@ export default function WhyParticipate() {
       </div>
 
       <main className="flex flex-col-reverse lg:flex-row gap-10">
-        <div className="w-[100%] lg:w-1/2">
+        <div className="w-[100%] lg:w-1/2 flex">
           <Image
             src="/lab.jpg"
             alt="image for the why participate section"
             layout="responsive"
-            width={2}
-            height={2}
-            className="px-5"
+            width={1080}
+            height={744}
+            className="object-cover max-w-[1080px] h-full w-full"
           />
         </div>
         
