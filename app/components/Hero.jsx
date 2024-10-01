@@ -3,6 +3,7 @@ import Countdown from "./Countdown";
 import rocket from "@/app/assets/rocket.png";
 import planet1 from "@/app/assets/planet-1.png";
 import planet2 from "@/app/assets/planet-2.png";
+import { targetDate } from "../utils/helper";
 
 export default function Hero() {
   return (
@@ -34,7 +35,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <Countdown targetDate="2024-10-01T20:00:00" />
+        <Countdown targetDate={targetDate} />
       </div>
       <Image
         src={planet1}

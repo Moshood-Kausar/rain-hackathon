@@ -9,16 +9,10 @@ module.exports = {
     extend: {
       colors: {
         primary: "#F8C748" /* Yellow */,
-        hoveredPrimary: "",
-        activePrimary: "",
         lightYellow: "#FEF9ED",
-        darkYellow: "#",
-        hoveredDarkYellow: "",
-        activeDarkYellow: "",
         secondary: "#303210" /* Green */,
         lightGreen: "#EAEBE7",
-        darkGreen: "#",
-        dark: "#1d1d1d"
+        dark: "#1D1D1D"
       },
       keyframes: {
         "bounce-slowTop": {

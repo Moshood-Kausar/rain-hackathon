@@ -1,9 +1,10 @@
 import "./globals.css";
 import { poppins } from "./fonts";
+import { NotificationProvider } from "./contexts";
 
 export const metadata = {
-  title: "RAIN Hackathon 2024: Innovate the Future",
-  description: "Join us for the RAIN Hackathon 2024 where the brightest minds in Robotics and Artificial intelligence will converge to tackle Africa's most pressing challenges",
+  title: "RAIN Hackathon 1.0: Innovate the Future",
+  description: "Join us for the RAIN Hackathon 1.0 where the brightest minds in Robotics and Artificial intelligence will converge to tackle Africa's most pressing challenges",
 };
 
 export default function RootLayout({ children }) {
@@ -12,7 +13,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.className}`}
       >
-        {children}
+        <NotificationProvider>
+          {children}
+        </NotificationProvider>
       </body>
     </html>
   );
