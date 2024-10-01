@@ -306,7 +306,7 @@ export const BackArrow = () => {
 
 export const SuccessIcon = () => {
   return (
-    <svg className="w-24 md:w-full h-fit" width="136" height="135" viewBox="0 0 136 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className="w-24 md:w-full max-w-[100px] h-fit" width="136" height="135" viewBox="0 0 136 135" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="67.1117" cy="67.5004" r="52.4013" fill="#F8C748" stroke="#F8C748" stroke-width="1.77632"/>
 <g clip-path="url(#clip0_184_2200)">
 <path d="M90.2422 53.3898L59.1567 84.4753L44.9092 70.2278L48.5617 66.5752L59.1567 77.1443L86.5897 49.7372L90.2422 53.3898Z" fill="white"/>
