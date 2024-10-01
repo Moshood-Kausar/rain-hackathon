@@ -5,7 +5,7 @@ export default function StepIndicator({ currentStep }) {
     <main>
       <div>
         <h1 className="font-medium text-sm md:text-lg lg:text-2xl">Welcome, Innovators!</h1>
-        <p className="font-normal text-[16px]">Please complete the form below to register and submit your team’s proposal</p>
+        <p className="font-normal text-[16px]">Please complete the form below to register and submit your team&apos;s proposal</p>
       </div>
     
       <div className=" mb-6">
