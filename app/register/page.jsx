@@ -178,7 +178,7 @@ export default function Registration() {
     }
   };
 
-  let targetDate = "2024-10-01T00:00:00";
+  let targetDate = "2024-10-03T00:00:00";
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
