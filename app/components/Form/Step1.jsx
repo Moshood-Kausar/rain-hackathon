@@ -1,24 +1,15 @@
 export default function Step1({ formData, handleFormChange, nextStep }) {
   return (
     <div>
-      {/* <h2 className="text-center text-2xl font-bold mb-6">Welcome, Innovators!</h2>
-      <p className="text-center mb-6">Please complete the form below to register and submit your team’s proposal</p>
-      <div className="flex justify-center mb-6">
-        <div className="step-indicator">
-          <span className="step active">1</span> <span>------&gt;</span>
-          <span className="step">2</span> <span>------&gt;</span>
-          <span className="step">3</span>
-        </div>
-      </div> */}
 
       <div className="mb-4">
         <label className="block mb-2">Team Name</label>
         <input
           type="text"
-          value={formData.teamName}
-          onChange={handleFormChange('teamName')}
+          value={formData.team_name}
+          onChange={handleFormChange('team_name')}
           placeholder="Enter your team name"
-          className="w-full p-2 border rounded"
+          className="w-full p-2 border border-secondary/50 focus:border-secondary outline-none transition duration-200 rounded"
         />
       </div>
 
@@ -26,23 +17,25 @@ export default function Step1({ formData, handleFormChange, nextStep }) {
         <label className="block mb-2">Full Name</label>
         <input
           type="text"
-          value={formData.fullName}
-          onChange={handleFormChange('fullName')}
-          className="w-full p-2 border rounded"
+          value={formData.team_leader_name}
+          onChange={handleFormChange('team_leader_name')}
+          placeholder="Enter your full name"
+          className="w-full p-2 border border-secondary/50 focus:border-secondary outline-none transition duration-200 rounded"
         />
       </div>
 
       <div className="mb-4">
-        <label className="block mb-2">Email</label>
+        <label className="block mb-2">Email Address</label>
         <input
           type="email"
-          value={formData.email}
-          onChange={handleFormChange('email')}
-          className="w-full p-2 border rounded"
+          value={formData.team_leader_email}
+          onChange={handleFormChange('team_leader_email')}
+          placeholder="Enter your email address"
+          className="w-full p-2 border border-secondary/50 focus:border-secondary outline-none transition duration-200 rounded"
         />
       </div>
 
-      <button onClick={nextStep} className="w-full py-2 px-4 bg-yellow-500 text-white rounded mt-4">
+      <button type="button" onClick={nextStep} className="w-full py-2 px-4 bg-yellow-500 text-white rounded mt-4">
         Next
       </button>
     </div>

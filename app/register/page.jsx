@@ -20,27 +20,47 @@ export default function Registration() {
   const [seconds, setSeconds] = useState("00");
   const [isCountdownVisible, setIsCountdownVisible] = useState(false);
   const [countdownCheck, setCoundownCheck] = useState(false);
-  const [isInitialRender, setRender] = useState(true);
+  const [isInitialRender, setRender] = useState(false);
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    teamName: '',
-    fullName: '',
-    email: '',
-    totalMembers: 1,  // Default to working alone
-    teamMembers: [{ name: '', email: '' }],
-    specialization: '',
-    document: null,
+    team_name: '',
+    team_leader_name: '',
+    team_leader_email: '',
+    no_of_members: 1,
+    team_member1_name: "",
+    team_member1_email: "",
+    team_member2_name: "",
+    team_member2_email: "",
+    team_member3_name: "",
+    team_member3_email: "",
+    area_of_specialization: 'Robotics',
+    project_file: null,
   });
+
+  // useEffect(()=> {
+  //   console.log("formData",formData)
+  // },[formData.project_file])
 
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
   const handleFormChange = (input) => (e) => {
-    setFormData({ ...formData, [input]: e.target.value });
+    if (e.target.name === 'project_file') {
+      setFormData({
+        ...formData,
+        project_file: e.target.files[0],
+      });
+    } else {
+      setFormData({ ...formData, [input]: e.target.value });
+    }
   };
 
- let targetDate="2024-10-01T12:00:00";
+  const handleSubmit = () => {
+    if(!formData) return
+  }
+
+ let targetDate="2024-10-01T20:00:00";
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -164,6 +184,9 @@ export default function Registration() {
         <div className="w-full flex items-center justify-center mb-20">
           <Image
             src={logo}
+            width={1944}
+            height={728}
+            className='max-w-[200px] md:max-w-[300px]'
             alt="RAIN-INN logo on the registration page"
           />
         </div>
@@ -181,8 +204,10 @@ export default function Registration() {
     <div className='flex min-h-screen w-full justify-center items-center'>
       <Image
             src={logo}
+            width={1944}
+            height={728}
             alt="RAIN-INN logo on the registration page"
-            className='animate-bounce'
+            className='animate-bounce max-w-[200px] md:max-w-[300px]'
           />
     </div>
   );
