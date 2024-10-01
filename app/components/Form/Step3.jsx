@@ -7,11 +7,13 @@ export default function Step3({
   loading,
 }) {
   const specializations = [
-    { name: "Robotics", value: "Robotics" },
-    { name: "Artificial Intelligence", value: "AI" },
-    { name: "Machine Learning", value: "ML" },
-    { name: "Robotic Process Automation", value: "Robotic Process Automation" },
+    { name: "Food Security", value: "Food Security" },
+    { name: "National Security", value: "National Security" },
+    { name: "Health Care", value: "Health Care" },
+    { name: "E-Commerce", value: "E-Commerce" },
+    { name: "Special Education", value: "Special Education" }
   ];
+  
   return (
     <div>
       <h2 className="text-lg md:text-xl font-medium mb-6">
@@ -40,7 +42,7 @@ export default function Step3({
       </div>
 
       <div className="mb-4">
-        <p className="block mb-2">Upload Document</p>
+        <p className="block mb-2">Upload Document (PDF/doc/docx)</p>
         <label
           htmlFor="project_file"
           className="border-dashed border-2 border-primary rounded-lg p-4 text-center cursor-pointer flex justify-center"
@@ -60,7 +62,7 @@ export default function Step3({
           ) : (
             <p className="text-gray-500 text-center flex flex-col justify-center">
               <Cloud />
-              Click to select document
+              Click to select document (max 2Mb)
             </p>
           )}
         </label>
