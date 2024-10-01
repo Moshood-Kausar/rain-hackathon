@@ -14,6 +14,7 @@ import { poppins } from "../fonts";
 import axios from "axios";
 import { useNotification } from "../contexts";
 import { BackArrow, SuccessIcon } from "../assets/svg";
+import { targetDate } from "../utils/helper";
 
 const defaultFormData = {
   team_name: "",
@@ -36,6 +37,8 @@ export default function Registration() {
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
   const [isCountdownVisible, setIsCountdownVisible] = useState(false);
+  const [initialRender, setInitialRender] = useState(true);
+  const [countdownCheck, setCountdownCheck] = useState(false);
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState(defaultFormData);
@@ -178,7 +181,6 @@ export default function Registration() {
     }
   };
 
-  let targetDate = "2024-10-03T00:00:00";
   useEffect(() => {
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -203,11 +205,16 @@ export default function Registration() {
         setMinutes(String(minutes).padStart(2, "0"));
         setSeconds(String(seconds).padStart(2, "0"));
       }
+      setCountdownCheck(true);
     }, 1000);
 
     return () => clearInterval(interval);
   }, [targetDate]);
 
+useEffect(()=> {
+  setInitialRender(false);
+},[])
+  
   if (isCountdownVisible) {
     return (
       <main className={`${poppins.className} bg-hero min-h-screen`}>
@@ -306,71 +313,85 @@ export default function Registration() {
     );
   }
 
-  return (
-    <main className="min-h-screen flex items-center justify-center">
-      {!success && (
-        <Link href={"/"} className="absolute top-5 left-4 md:left-[130px]">
-          <BackArrow />
-        </Link>
-      )}
-      <div className="relative w-full max-w-xl p-5">
-        <div className="w-full flex items-center justify-center mb-8">
-          <Image
-            src={logo}
-            width={1944}
-            height={728}
-            className="w-fit max-w-[100px] md:max-w-[200px] h-10"
-            alt="RAIN-INN logo on the registration page"
-          />
-        </div>
-        {success ? (
-          <div className="flex flex-col justify-center items-center">
-            <SuccessIcon />
-            <div className="flex flex-col justify-center items-center mt-6">
-              <h2 className="text-center font-medium text-dark text-lg md:text-xl mb-4">
-                Registration Successful!
-              </h2>
-              <p className="text-center mb-7">
-                Thanks for registering! A confirmation email has been sent to
-                you.{" "}
-              </p>
-              <Link
-                href="/"
-                className="bg-primary text-sm text-dark py-3 px-6 rounded-lg text-center mx-auto"
-              >
-                Go to Home page
-              </Link>
-            </div>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <StepIndicator currentStep={step} />
-            {step === 1 && (
-              <Step1
-                formData={formData}
-                handleFormChange={handleFormChange}
-                nextStep={nextStep}
-              />
-            )}
-            {step === 2 && (
-              <Step2
-                formData={formData}
-                handleFormChange={handleFormChange}
-                nextStep={nextStep}
-                prevStep={prevStep}
-              />
-            )}
-            {step === 3 && (
-              <Step3
-                formData={formData}
-                handleFormChange={handleFormChange}
-                prevStep={prevStep}
-                loading={loading}
-              />
-            )}
-          </form>
+  if(!initialRender && countdownCheck){
+    return (
+      <main className="min-h-screen flex items-center justify-center">
+        {!success && (
+          <Link href={"/"} className="absolute top-5 left-4 md:left-[130px]">
+            <BackArrow />
+          </Link>
         )}
-      </div>
-    </main>
-  );
+        <div className="relative w-full max-w-xl p-5">
+          <div className="w-full flex items-center justify-center mb-8">
+            <Image
+              src={logo}
+              width={1944}
+              height={728}
+              className="w-fit max-w-[100px] md:max-w-[200px] h-10"
+              alt="RAIN-INN logo on the registration page"
+            />
+          </div>
+          {success ? (
+            <div className="flex flex-col justify-center items-center">
+              <SuccessIcon />
+              <div className="flex flex-col justify-center items-center mt-6">
+                <h2 className="text-center font-medium text-dark text-lg md:text-xl mb-4">
+                  Registration Successful!
+                </h2>
+                <p className="text-center mb-7">
+                  Thanks for registering! A confirmation email has been sent to
+                  you.{" "}
+                </p>
+                <Link
+                  href="/"
+                  className="bg-primary text-sm text-dark py-3 px-6 rounded-lg text-center mx-auto"
+                >
+                  Go to Home page
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <StepIndicator currentStep={step} />
+              {step === 1 && (
+                <Step1
+                  formData={formData}
+                  handleFormChange={handleFormChange}
+                  nextStep={nextStep}
+                />
+              )}
+              {step === 2 && (
+                <Step2
+                  formData={formData}
+                  handleFormChange={handleFormChange}
+                  nextStep={nextStep}
+                  prevStep={prevStep}
+                />
+              )}
+              {step === 3 && (
+                <Step3
+                  formData={formData}
+                  handleFormChange={handleFormChange}
+                  prevStep={prevStep}
+                  loading={loading}
+                />
+              )}
+            </form>
+          )}
+        </div>
+      </main>
+    );
+  }
+
+  return (
+    <div className="flex h-full justify-center items-center w-full min-h-dvh">
+      <Image
+          src={logo}
+          width={1944}
+          height={728}
+          className="w-fit max-w-[100px] md:max-w-[200px] h-10 animate-bounce"
+          alt="RAIN-INN logo on the registration page"
+        />
+    </div>
+  )
 }
