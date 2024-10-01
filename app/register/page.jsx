@@ -189,7 +189,7 @@ export default function Registration() {
               Oct 1st - Jan 31st 2025
             </h1>
             <p className="text-center mb-5 -mt-3">
-              The registration countdown is on...
+              The registration countdown is on ...
             </p>
 
             <div
