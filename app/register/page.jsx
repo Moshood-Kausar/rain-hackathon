@@ -12,7 +12,7 @@ import planet1 from "@/app/assets/planet-1.png";
 import planet2 from "@/app/assets/planet-2.png";
 import { poppins } from "../fonts";
 import axios from "axios";
-import { NotificationProvider, useNotification } from "../contexts";
+import { useNotification } from "../contexts";
 import { BackArrow, SuccessIcon } from "../assets/svg";
 
 const defaultFormData = {
@@ -24,7 +24,7 @@ const defaultFormData = {
   team_member1_email: "",
   team_member2_name: "",
   team_member2_email: "",
-  area_of_specialization: "Robotics",
+  area_of_specialization: "Food Security",
   project_file: null,
 }
 export default function Registration() {
@@ -45,10 +45,19 @@ export default function Registration() {
 
   const handleFormChange = (input) => (e) => {
     if (e.target.name === "project_file") {
-      setFormData({
-        ...formData,
-        project_file: e.target.files[0],
-      });
+      const file = e.target.files[0];
+
+    const maxFileSize = 2 * 1024 * 1024;
+
+    if (file && file.size > maxFileSize) {
+      notify("Please select a file less than 2MB.", 'warn');
+      return;
+    }
+
+    setFormData({
+      ...formData,
+      project_file: file,
+    });
     } else {
       setFormData({ ...formData, [input]: e.target.value });
     }
@@ -65,27 +74,31 @@ export default function Registration() {
       !formData.team_name ||
       !formData.team_leader_name ||
       !formData.team_leader_email ||
-      !formData.area_of_specialization ||
-      !formData.project_file
+      !formData.area_of_specialization
     ) {
-      alert("Please fill out all required fields.");
+      notify("Please all the fields are required.", 'inform');
+      return;
+    }
+
+    if(!formData.project_file){
+      notify("Please upload your project proposal.", 'warn');
       return;
     }
 
     // Validate team leader email format
     if (!emailPattern.test(formData.team_leader_email)) {
-      alert("Please enter a valid team leader email.");
+      notify("Please enter a valid team leader email.", 'warn');
       return;
     }
 
     // Validate team member 1 if applicable
     if (Number(formData.no_of_members) === 2) {
       if (!formData.team_member1_name || !formData.team_member1_email) {
-        alert("Please fill out team member 1 details.");
+        notify("Please fill out team member 1 details.", 'inform');
         return;
       }
       if (!emailPattern.test(formData.team_member1_email)) {
-        alert("Please enter a valid email for team member 1.");
+        notify("Please enter a valid email for team member 1.", "warn");
         return;
       }
     }
@@ -93,11 +106,11 @@ export default function Registration() {
     // Validate team member 2 if applicable
     if (Number(formData.no_of_members) === 3) {
       if (!formData.team_member2_name || !formData.team_member2_email) {
-        alert("Please fill out team member 2 details.");
+        notify("Please fill out team member 2 details.", 'inform');
         return;
       }
       if (!emailPattern.test(formData.team_member2_email)) {
-        alert("Please enter a valid email for team member 2.");
+        notify("Please enter a valid email for team member 2.", 'warn');
         return;
       }
     }
@@ -135,7 +148,30 @@ export default function Registration() {
       setSuccess(true);
       setFormData(defaultFormData);
     } catch (error) {
-      notify(`An error has occurred, ${error}`, 'error')
+      let message = "An error has occurred";
+
+  if (error.response && error.response.data) {
+    const errorData = error.response.data;
+
+    // Collect all error messages
+    const errorMessages = [];
+
+    // Check if there are field-specific errors
+    for (const field in errorData) {
+      if (Array.isArray(errorData[field])) {
+        // Add each error for the field
+        errorData[field].forEach((errorDetail) => {
+          errorMessages.push(`${field}: ${errorDetail}`);
+        });
+      }
+    }
+
+    // If we found specific error messages, update the default message
+    if (errorMessages.length > 0) {
+      message = errorMessages.join(', ');
+    }
+  }
+      notify(`${message}`, 'error')
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
