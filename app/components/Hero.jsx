@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <Countdown targetDate="2024-10-01T20:00:00" />
+        <Countdown targetDate="2024-10-01T00:00:00" />
       </div>
       <Image
         src={planet1}
