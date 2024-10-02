@@ -52,7 +52,7 @@ export default function Step3({
       </div>
 
       <div className="mb-4">
-        <p className="block mb-2">Upload Document (PDF/doc/docx)</p>
+        <p className="block mb-2">Upload Document (PDF/doc/docx)  <span className="text-red-500"> *</span></p>
         <label
           htmlFor="project_file"
           className="border-dashed border-2 border-primary rounded-lg p-4 text-center cursor-pointer flex justify-center"

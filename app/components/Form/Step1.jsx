@@ -27,7 +27,7 @@ export default function Step1({ formData, handleFormChange, nextStep, prevStep }
       </div>
 
       <div className="mb-4">
-        <label className="block mb-2">Team Member 1</label>
+        <label className="block mb-2">Team Member 1 <span className="text-red-500"> *</span></label>
         <input
           type="text"
           value={formData.team_leader_name}
