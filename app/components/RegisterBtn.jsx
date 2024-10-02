@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
-const RegisterButton = ({ text = "Register now", icon = "/Register-icon.svg", href = "/register" }) => {
+const RegisterButton = ({ text = "Register now", icon = "/Register-icon.svg", href = "/Form/Step1" }) => {
   return (
     <Link href={href} className="flex items-center justify-center gap-2 px-4 py-2 bg-primary rounded-md transition">
       {/* Render the Text */}
