@@ -10,11 +10,13 @@ import Link from "next/link";
 import rocket from "@/app/assets/rocket.png";
 import planet1 from "@/app/assets/planet-1.png";
 import planet2 from "@/app/assets/planet-2.png";
+import icon from "@/app/assets/Register-icon.svg";
 import { poppins } from "../fonts";
 import axios from "axios";
 import { useNotification } from "../contexts";
 import { BackArrow, SuccessIcon } from "../assets/svg";
 import { targetDate } from "../utils/helper";
+import { SummaryPage } from "../components/Form/FormSummary";
 
 const defaultFormData = {
   team_name: "",
@@ -27,7 +29,7 @@ const defaultFormData = {
   team_member2_email: "",
   area_of_specialization: "Food Security",
   project_file: null,
-}
+};
 export default function Registration() {
   const { notify } = useNotification();
   const [loading, setLoading] = useState(false);
@@ -40,7 +42,7 @@ export default function Registration() {
   const [initialRender, setInitialRender] = useState(true);
   const [countdownCheck, setCountdownCheck] = useState(false);
 
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(0);
   const [formData, setFormData] = useState(defaultFormData);
 
   const nextStep = () => setStep(step + 1);
@@ -50,17 +52,17 @@ export default function Registration() {
     if (e.target.name === "project_file") {
       const file = e.target.files[0];
 
-    const maxFileSize = 5 * 1024 * 1024;
+      const maxFileSize = 5 * 1024 * 1024;
 
-    if (file && file.size > maxFileSize) {
-      notify("Please select a file less than 2MB.", 'warn');
-      return;
-    }
+      if (file && file.size > maxFileSize) {
+        notify("Please select a file less than 5MB.", "warn");
+        return;
+      }
 
-    setFormData({
-      ...formData,
-      project_file: file,
-    });
+      setFormData({
+        ...formData,
+        project_file: file,
+      });
     } else {
       setFormData({ ...formData, [input]: e.target.value });
     }
@@ -79,25 +81,25 @@ export default function Registration() {
       !formData.team_leader_email ||
       !formData.area_of_specialization
     ) {
-      notify("Please all the fields are required.", 'inform');
+      notify("Please all the fields are required.", "inform");
       return;
     }
 
-    if(!formData.project_file){
-      notify("Please upload your project proposal.", 'warn');
+    if (!formData.project_file) {
+      notify("Please upload your project proposal.", "warn");
       return;
     }
 
     // Validate team leader email format
     if (!emailPattern.test(formData.team_leader_email)) {
-      notify("Please enter a valid team leader email.", 'warn');
+      notify("Please enter a valid team leader email.", "warn");
       return;
     }
 
     // Validate team member 1 if applicable
     if (Number(formData.no_of_members) === 2) {
       if (!formData.team_member1_name || !formData.team_member1_email) {
-        notify("Please fill out team member 1 details.", 'inform');
+        notify("Please fill out team member 2 details.", "inform");
         return;
       }
       if (!emailPattern.test(formData.team_member1_email)) {
@@ -109,11 +111,11 @@ export default function Registration() {
     // Validate team member 2 if applicable
     if (Number(formData.no_of_members) === 3) {
       if (!formData.team_member2_name || !formData.team_member2_email) {
-        notify("Please fill out team member 2 details.", 'inform');
+        notify("Please fill out team member 2 details.", "inform");
         return;
       }
       if (!emailPattern.test(formData.team_member2_email)) {
-        notify("Please enter a valid email for team member 2.", 'warn');
+        notify("Please enter a valid email for team member 2.", "warn");
         return;
       }
     }
@@ -153,28 +155,28 @@ export default function Registration() {
     } catch (error) {
       let message = "An error has occurred";
 
-  if (error.response && error.response.data) {
-    const errorData = error.response.data;
+      if (error.response && error.response.data) {
+        const errorData = error.response.data;
 
-    // Collect all error messages
-    const errorMessages = [];
+        // Collect all error messages
+        const errorMessages = [];
 
-    // Check if there are field-specific errors
-    for (const field in errorData) {
-      if (Array.isArray(errorData[field])) {
-        // Add each error for the field
-        errorData[field].forEach((errorDetail) => {
-          errorMessages.push(`${field}: ${errorDetail}`);
-        });
+        // Check if there are field-specific errors
+        for (const field in errorData) {
+          if (Array.isArray(errorData[field])) {
+            // Add each error for the field
+            errorData[field].forEach((errorDetail) => {
+              errorMessages.push(`${field}: ${errorDetail}`);
+            });
+          }
+        }
+
+        // If we found specific error messages, update the default message
+        if (errorMessages.length > 0) {
+          message = errorMessages.join(", ");
+        }
       }
-    }
-
-    // If we found specific error messages, update the default message
-    if (errorMessages.length > 0) {
-      message = errorMessages.join(', ');
-    }
-  }
-      notify(`${message}`, 'error')
+      notify(`${message}`, "error");
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
@@ -211,10 +213,10 @@ export default function Registration() {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-useEffect(()=> {
-  setInitialRender(false);
-},[])
-  
+  useEffect(() => {
+    setInitialRender(false);
+  }, []);
+
   if (isCountdownVisible) {
     return (
       <main className={`${poppins.className} bg-hero min-h-screen`}>
@@ -313,23 +315,27 @@ useEffect(()=> {
     );
   }
 
-  if(!initialRender && countdownCheck){
+  if (!initialRender && countdownCheck) {
     return (
-      <main className="min-h-screen flex items-center justify-center">
+      <main className="min-h-screen flex flex-col items-center justify-center">
         {!success && (
-          <Link href={"/"} className="absolute top-5 left-4 md:left-[130px]">
-            <BackArrow />
-          </Link>
+          <div className="container w-[90%] relative">
+            <Link href={"/"} className="absolute top-5 left-0">
+              <BackArrow />
+            </Link>
+          </div>
         )}
-        <div className="relative w-full max-w-xl p-5">
+        <div className="relative w-full max-w-2xl p-5">
           <div className="w-full flex items-center justify-center mb-8">
-            <Image
-              src={logo}
-              width={1944}
-              height={728}
-              className="w-fit max-w-[100px] md:max-w-[200px] h-10"
-              alt="RAIN-INN logo on the registration page"
-            />
+            <Link href={"/"}>
+              <Image
+                src={logo}
+                width={1944}
+                height={728}
+                className="w-fit max-w-[100px] md:max-w-[200px] h-10"
+                alt="RAIN-INN logo on the registration page"
+              />
+            </Link>
           </div>
           {success ? (
             <div className="flex flex-col justify-center items-center">
@@ -352,11 +358,64 @@ useEffect(()=> {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <StepIndicator currentStep={step} />
+              {step === 0 && (
+                <div>
+                  <div>
+                    <h1 className="font-medium text-xl md:text-2xl mb-2">
+                      Welcome, Innovators!
+                    </h1>
+                    <p>
+                      Before continuing, kindly go through the hackathon terms
+                      and condition and the proposal guidelines for
+                      participating in this Hackathon to avoid disqualification.
+                    </p>
+                  </div>
+                  <div className="mt-4">
+                    <h2 className="text-lg font-medium mb-2">
+                      Hackathon Terms and Conditions
+                    </h2>
+                    <embed
+                      src="/Hackathon_Terms_and_Conditions.pdf"
+                      type="application/pdf"
+                      className="flex w-full h-full min-h-[400px] mx-auto"
+                    />
+                  </div>
+                  <div className="mt-8">
+                    <h2 className="text-lg font-medium mb-2">
+                      Hackathon Proposal Guidelines
+                    </h2>
+                    <embed
+                      src="/Hackathon_Proposal_Guidelines.pdf"
+                      type="application/pdf"
+                      className="flex w-full h-full min-h-[400px] mx-auto"
+                    />
+                  </div>
+                  <div className="flex justify-end mt-8">
+                    <button
+                      onClick={() => setStep(1)}
+                      type="button"
+                      className="w-full max-w-[200px] ml-auto py-2 px-4 bg-primary hover:scale-90 active:scale-100 transition duration-200 rounded"
+                    >
+                      <span className="flex justify-center items-center">
+                        Continue{" "}
+                        <Image
+                          src={icon}
+                          alt={``}
+                          width={16}
+                          height={16}
+                          className="ml-2 flex w-5 h-5 aspect-square rounded-full bg-black"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              )}
+              {step > 0 && <StepIndicator currentStep={step} />}
               {step === 1 && (
                 <Step1
                   formData={formData}
                   handleFormChange={handleFormChange}
+                  prevStep={prevStep}
                   nextStep={nextStep}
                 />
               )}
@@ -372,7 +431,15 @@ useEffect(()=> {
                 <Step3
                   formData={formData}
                   handleFormChange={handleFormChange}
+                  nextStep={nextStep}
                   prevStep={prevStep}
+                  loading={loading}
+                />
+              )}
+              {step === 4 && (
+                <SummaryPage
+                  formData={formData}
+                  setStep={setStep}
                   loading={loading}
                 />
               )}
@@ -386,12 +453,12 @@ useEffect(()=> {
   return (
     <div className="flex h-full justify-center items-center w-full min-h-dvh">
       <Image
-          src={logo}
-          width={1944}
-          height={728}
-          className="w-fit max-w-[100px] md:max-w-[200px] h-10 animate-bounce"
-          alt="RAIN-INN logo on the registration page"
-        />
+        src={logo}
+        width={1944}
+        height={728}
+        className="w-fit max-w-[100px] md:max-w-[200px] h-10 animate-bounce"
+        alt="RAIN-INN logo on the registration page"
+      />
     </div>
-  )
+  );
 }

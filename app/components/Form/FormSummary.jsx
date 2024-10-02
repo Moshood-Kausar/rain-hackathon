@@ -1,55 +1,138 @@
-import React, { useState } from "react";
-import { useRouter } from "next/router";
+import { LoadingIndicator } from "@/app/assets/svg";
+import Image from "next/image";
+import icon from "@/app/assets/Register-icon.svg";
 
-const SummaryPage = ({ formData }) => {
-  const router = useRouter();
-
-  // Go back to the respective form pages for editing
-  const handleEdit = (step) => {
-    router.push(`/register/step-${step}`);
-  };
-
-  const handleSubmit = () => {
-    // Submit form logic here (could be API call)
-    console.log("Submitting form data:", formData);
-    alert("Form submitted successfully!");
-  };
-
+export const SummaryPage = ({ formData, setStep, loading }) => {
   return (
-    <div className="summary-page">
-      <h2>Summary</h2>
+    <div className="space-y-5">
+      <h2 className="font-medium text-lg md:text-xl">Summary</h2>
 
-      <section>
-        <h3>Team Leader Information</h3>
-        <p>Team Name: {formData.teamName}</p>
-        <p>Full Name: {formData.teamLeader.name}</p>
-        <p>E-mail Address: {formData.teamLeader.email}</p>
-        <button onClick={() => handleEdit(1)}>Edit</button>
-      </section>
-
-      <section>
-        <h3>Team Member Information</h3>
-        {formData.teamMembers.map((member, index) => (
-          <div key={index}>
-            <p>Name: {member.name}</p>
-            <p>E-mail Address: {member.email}</p>
+      <section className="space-y-3.5">
+        <div className="flex justify-between">
+          <h3 className="text-dark font-medium text-base md:text-lg">
+            Team Member 1 Information
+          </h3>
+          <button
+            className="text-primary font-medium text-lg underline underline-offset-2 hover:opacity-70"
+            onClick={() => setStep(1)}
+          >
+            Edit
+          </button>
+        </div>
+        <div className="space-y-7">
+          <div className="space-y-2">
+            <p className="text-[#4C4C4C]">Team Name</p>
+            <p className="text-[#323232]">{formData.team_name}</p>
           </div>
-        ))}
-        <button onClick={() => handleEdit(2)}>Edit</button>
+          <div className="space-y-2">
+            <p className="text-[#4C4C4C]">Full Name</p>
+            <p className="text-[#323232]">{formData.team_leader_name}</p>
+          </div>
+          <div className="space-y-2">
+            <p className="text-[#4C4C4C]">E-mail Address</p>
+            <p className="text-[#323232]">{formData.team_leader_email}</p>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h3>Specialization & Proposal Submission</h3>
-        <p>Area of Specialization: {formData.specialization}</p>
-        <p>Uploaded Document: {formData.proposal}</p>
-        <button onClick={() => handleEdit(3)}>Edit</button>
+      {Number(formData.no_of_members) >= 2 && (
+        <section className="space-y-3.5">
+          <div className="flex justify-between">
+            <h3 className="text-dark font-medium text-base md:text-lg">
+              Team Member 2 Information
+            </h3>
+            <button
+              className="text-primary font-medium text-lg underline underline-offset-2 hover:opacity-70"
+              onClick={() => setStep(2)}
+            >
+              Edit
+            </button>
+          </div>
+          <div className="space-y-7">
+            <div className="space-y-2">
+              <p className="text-[#4C4C4C]">Name</p>
+              <p className="text-[#323232]">{formData.team_member1_name}</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-[#4C4C4C]">Email Address</p>
+              <p className="text-[#323232]">{formData.team_member1_email}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {Number(formData.no_of_members) === 3 && (
+        <section className="space-y-3.5">
+          <div className="flex justify-between">
+            <h3 className="text-dark font-medium text-base md:text-lg">
+              Team Member 3 Information
+            </h3>
+            <button
+              className="text-primary font-medium text-lg underline underline-offset-2 hover:opacity-70"
+              onClick={() => setStep(2)}
+            >
+              Edit
+            </button>
+          </div>
+          <div className="space-y-7">  
+            <div className="space-y-2">
+              <p className="text-[#4C4C4C]">Name</p>
+              <p className="text-[#323232]">{formData.team_member2_name}</p>
+            </div>
+            <div className="space-y-2">
+              <p className="text-[#4C4C4C]">Email Address</p>
+              <p className="text-[#323232]">{formData.team_member2_email}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="space-y-3.5">
+        <div className="flex justify-between">
+          <h3 className="text-dark font-medium text-base md:text-lg">
+            Specialization & Proposal Submission
+          </h3>
+          <button
+            className="text-primary font-medium text-lg underline underline-offset-2 hover:opacity-70"
+            onClick={() => setStep(3)}
+          >
+            Edit
+          </button>
+        </div>
+        <div className="space-y-7">
+          <div className="space-y-2">
+            <p className="text-[#4C4C4C]">Area of Specialization</p>
+            <p className="text-[#323232]">{formData.area_of_specialization}</p>
+          </div>
+          <div className="space-y-2">
+            <p className="text-[#4C4C4C]">Uploaded Document</p>
+            <p className="text-[#323232]">{formData.project_file?.name}</p>
+        </div>
+        </div>
       </section>
 
-      <button onClick={handleSubmit} className="submit-button">
-        Submit
-      </button>
+      <div className="flex justify-end pr-5">
+        <button
+          disabled={loading}
+          type="submit"
+          className="py-2 px-4 w-full flex justify-center items-center max-w-[116px] bg-primary hover:scale-90 active:scale-100 transition duration-200 text-dark rounded disabled:cursor-not-allowed"
+        >
+          {loading ? (
+            <LoadingIndicator />
+          ) : (
+            <span className="flex justify-center items-center">
+              Submit{" "}
+              <Image
+                src={icon}
+                alt={``}
+                width={16}
+                height={16}
+                className="ml-2 flex w-5 h-5 aspect-square rounded-full bg-black"
+              />
+            </span>
+          )}
+        </button>
+      </div>
     </div>
   );
 };
-
-export default SummaryPage;

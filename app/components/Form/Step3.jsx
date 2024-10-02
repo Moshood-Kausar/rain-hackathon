@@ -1,19 +1,29 @@
-import { Cloud, LoadingIndicator } from "@/app/assets/svg";
+import { Cloud } from "@/app/assets/svg";
+import { useNotification } from "@/app/contexts";
 
 export default function Step3({
   formData,
   handleFormChange,
+  nextStep,
   prevStep,
-  loading,
 }) {
+  const { notify } = useNotification();
   const specializations = [
     { name: "Food Security", value: "Food Security" },
     { name: "National Security", value: "National Security" },
     { name: "Health Care", value: "Health Care" },
     { name: "E-Commerce", value: "E-Commerce" },
-    { name: "Special Education", value: "Special Education" }
+    { name: "Special Education", value: "Special Education" },
   ];
-  
+
+  const handleNext = () => {
+    if (formData.project_file && formData.area_of_specialization) {
+      nextStep();
+    } else {
+      notify("Please fill in all required fields", "inform");
+    }
+  };
+
   return (
     <div>
       <h2 className="text-lg md:text-xl font-medium mb-6">
@@ -69,13 +79,19 @@ export default function Step3({
       </div>
 
       <div className="flex justify-between mt-6">
-      <button type="button" onClick={prevStep} className="py-2 px-4 w-full max-w-[116px] bg-transparent border border-primary rounded">Back</button>
         <button
-          disabled={loading}
-          type="submit"
+          type="button"
+          onClick={prevStep}
+          className="py-2 px-4 w-full max-w-[116px] bg-transparent border border-primary rounded"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          onClick={handleNext}
           className="py-2 px-4 w-full max-w-[116px] bg-yellow-500 text-dark rounded disabled:cursor-not-allowed"
         >
-          {loading ? <LoadingIndicator /> : "Submit"}
+          Next
         </button>
       </div>
     </div>

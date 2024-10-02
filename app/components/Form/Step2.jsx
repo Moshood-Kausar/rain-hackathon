@@ -23,12 +23,14 @@ export default function Step2({
         notify("Please fill in all team members details", "inform");
         return;
       }
-    } 
+    }
     nextStep();
   };
   return (
     <div>
-      <h2 className="text-lg md:text-xl font-medium mb-5">Team Members Information</h2>
+      <h2 className="text-lg md:text-xl font-medium mb-5">
+        Other Members Information
+      </h2>
       <p className="hidden text-center mb-6">
         Complete your team&apos;s details
       </p>
@@ -80,7 +82,7 @@ export default function Step2({
           onClick={prevStep}
           className="py-2 px-4 w-full max-w-[116px] bg-transparent border border-primary text-[#1D1D1D] rounded"
         >
-          Back
+          Previous
         </button>
 
         {/* If the user selects 1 member, show the "Skip" button; otherwise show "Next" */}
