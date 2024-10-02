@@ -111,7 +111,7 @@ export const SummaryPage = ({ formData, setStep, loading }) => {
         </div>
       </section>
 
-      <div className="flex justify-end pr-5">
+      <div className="flex justify-end md:pr-5">
         <button
           disabled={loading}
           type="submit"

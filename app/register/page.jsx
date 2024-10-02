@@ -365,9 +365,8 @@ export default function Registration() {
                       Welcome, Innovators!
                     </h1>
                     <p>
-                      Before continuing, kindly go through the hackathon terms
-                      and condition and the proposal guidelines for
-                      participating in this Hackathon to avoid disqualification.
+                      Before continuing, ensure you&apos;ve gone through the Hackathon Terms
+                      and Condition and the Hackathon Proposal Guidelines to avoid disqualification.
                     </p>
                   </div>
                   <div className="mt-4">

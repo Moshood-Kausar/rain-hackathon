@@ -27,11 +27,11 @@ export default function Step3({
   return (
     <div>
       <h2 className="text-lg md:text-xl font-medium mb-6">
-        Specialization & Proposal Submission
+        Project Focus & Proposal Submission
       </h2>
 
       <div className="mb-4">
-        <label className="block mb-2">Area of Specialization</label>
+        <label className="block mb-2">Thematic Area of Project Focus</label>
         <div className="flex flex-col">
           {specializations.map((option) => (
             <div key={option.name} className="inline-flex items-center">
@@ -72,7 +72,7 @@ export default function Step3({
           ) : (
             <p className="text-gray-500 text-center flex flex-col justify-center">
               <Cloud />
-              Click to select document (max 5Mb)
+              Click to select document (max. 5MB)
             </p>
           )}
         </label>
