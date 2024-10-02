@@ -4,15 +4,42 @@ import { poppins } from "@/app/fonts";
 export default function StepIndicator({ currentStep }) {
   return (
     <section className={`${poppins.className}`}>
-      <div>
+      {currentStep === 0 && (
+        <div>
         <h1 className="font-medium text-xl md:text-2xl mb-2">
           Welcome, Innovators!
         </h1>
         <p>
-          Please complete the form below to register and submit your team&apos;s
-          proposal
+          Before continuing, ensure you&apos;ve gone through the Hackathon Terms
+          and Condition and the Hackathon Proposal Guidelines to avoid disqualification.
         </p>
       </div>
+      )}
+      {(currentStep === 1 || currentStep === 4) && (
+        <div>
+          <h1 className="font-medium text-xl md:text-2xl mb-2">
+            Welcome, Innovators!
+          </h1>
+          <p>
+            Please complete the form below to register and submit your
+            team&apos;s proposal.
+          </p>
+        </div>
+      )}
+
+      {currentStep === 2 && (
+        <p>
+          You can pick a maximum of 2 members, which makes you 3 in the team,
+          you can skip if you don&apos;t have a team.
+        </p>
+      )}
+
+      {currentStep === 3 && (
+        <p>
+          Make sure you select the right project focus and upload the right
+          file.
+        </p>
+      )}
 
       <div className="mt-4 mb-6">
         <div className="step-indicator flex items-center space-x-2 md:space-x-5">
