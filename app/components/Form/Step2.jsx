@@ -23,9 +23,8 @@ export default function Step2({
         notify("Please fill in all team members details", "inform");
         return;
       }
-    } else {
-      nextStep();
-    }
+    } 
+    nextStep();
   };
   return (
     <div>
@@ -54,7 +53,7 @@ export default function Step2({
         Array.from({ length: formData.no_of_members - 1 }).map((_, index) => (
           <div key={index} className="mb-4">
             <label className="text-[#323232] block mb-2">
-              Team Member {index + 1}
+              Team Member {index + 2}
             </label>
             <input
               type="text"

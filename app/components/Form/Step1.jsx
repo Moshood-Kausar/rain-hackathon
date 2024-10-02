@@ -24,7 +24,7 @@ export default function Step1({ formData, handleFormChange, nextStep }) {
       </div>
 
       <div className="mb-4">
-        <label className="block mb-2">Full Name</label>
+        <label className="block mb-2">Team Member 1</label>
         <input
           type="text"
           value={formData.team_leader_name}
@@ -35,7 +35,6 @@ export default function Step1({ formData, handleFormChange, nextStep }) {
       </div>
 
       <div className="mb-4">
-        <label className="block mb-2">Email Address</label>
         <input
           type="email"
           value={formData.team_leader_email}
