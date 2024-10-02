@@ -1,27 +1,37 @@
-import { Cloud, LoadingIndicator } from "@/app/assets/svg";
+import { Cloud } from "@/app/assets/svg";
+import { useNotification } from "@/app/contexts";
 
 export default function Step3({
   formData,
   handleFormChange,
+  nextStep,
   prevStep,
-  loading,
 }) {
+  const { notify } = useNotification();
   const specializations = [
     { name: "Food Security", value: "Food Security" },
     { name: "National Security", value: "National Security" },
     { name: "Health Care", value: "Health Care" },
     { name: "E-Commerce", value: "E-Commerce" },
-    { name: "Special Education", value: "Special Education" }
+    { name: "Special Education", value: "Special Education" },
   ];
-  
+
+  const handleNext = () => {
+    if (formData.project_file && formData.area_of_specialization) {
+      nextStep();
+    } else {
+      notify("Please fill in all required fields", "inform");
+    }
+  };
+
   return (
     <div>
       <h2 className="text-lg md:text-xl font-medium mb-6">
-        Specialization & Proposal Submission
+        Project Focus & Proposal Submission
       </h2>
 
       <div className="mb-4">
-        <label className="block mb-2">Area of Specialization</label>
+        <label className="block mb-2">Thematic Area of Project Focus</label>
         <div className="flex flex-col">
           {specializations.map((option) => (
             <div key={option.name} className="inline-flex items-center">
@@ -42,7 +52,7 @@ export default function Step3({
       </div>
 
       <div className="mb-4">
-        <p className="block mb-2">Upload Document (PDF/doc/docx)</p>
+        <p className="block mb-2">Upload Document (PDF/doc/docx)  <span className="text-red-500"> *</span></p>
         <label
           htmlFor="project_file"
           className="border-dashed border-2 border-primary rounded-lg p-4 text-center cursor-pointer flex justify-center"
@@ -62,20 +72,26 @@ export default function Step3({
           ) : (
             <p className="text-gray-500 text-center flex flex-col justify-center">
               <Cloud />
-              Click to select document (max 2Mb)
+              Click to select document (max. 5MB)
             </p>
           )}
         </label>
       </div>
 
       <div className="flex justify-between mt-6">
-      <button type="button" onClick={prevStep} className="py-2 px-4 w-full max-w-[116px] bg-transparent border border-primary rounded">Back</button>
         <button
-          disabled={loading}
-          type="submit"
+          type="button"
+          onClick={prevStep}
+          className="py-2 px-4 w-full max-w-[116px] bg-transparent border border-primary rounded"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          onClick={handleNext}
           className="py-2 px-4 w-full max-w-[116px] bg-yellow-500 text-dark rounded disabled:cursor-not-allowed"
         >
-          {loading ? <LoadingIndicator /> : "Submit"}
+          Next
         </button>
       </div>
     </div>
