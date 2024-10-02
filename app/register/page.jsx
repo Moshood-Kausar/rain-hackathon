@@ -358,21 +358,33 @@ export default function Registration() {
             </div>
           ) : (
             <form onSubmit={handleSubmit}>
+              <StepIndicator currentStep={step} />
               {step === 0 && (
                 <div>
-                  <div>
-                    <h1 className="font-medium text-xl md:text-2xl mb-2">
-                      Welcome, Innovators!
-                    </h1>
-                    <p>
-                      Before continuing, ensure you&apos;ve gone through the Hackathon Terms
-                      and Condition and the Hackathon Proposal Guidelines to avoid disqualification.
-                    </p>
-                  </div>
                   <div className="mt-4">
-                    <h2 className="text-lg font-medium mb-2">
-                      Hackathon Terms and Conditions
-                    </h2>
+                    <div className="flex flex-col sm:flex-row justify-between">
+                      <h2 className="text-lg font-medium mb-2">
+                        Hackathon Terms and Conditions
+                      </h2>
+                      <div className="flex justify-end mb-2">
+                        <a
+                          href="/Hackathon_Terms_and_Conditions.pdf"
+                          download="RAIN_Hackathon_Terms_and_Conditions.pdf"
+                          className="py-2 px-4 w-fit flex justify-center items-center bg-primary hover:scale-90 active:scale-100 transition duration-200 text-dark rounded cursor-pointer"
+                        >
+                          <span className="flex justify-center items-center">
+                            Download PDF{" "}
+                            <Image
+                              src={icon}
+                              alt={``}
+                              width={16}
+                              height={16}
+                              className="ml-2 flex w-5 h-5 rotate-90 aspect-square rounded-full bg-black"
+                            />
+                          </span>
+                        </a>
+                      </div>
+                    </div>
                     <embed
                       src="/Hackathon_Terms_and_Conditions.pdf"
                       type="application/pdf"
@@ -380,9 +392,29 @@ export default function Registration() {
                     />
                   </div>
                   <div className="mt-8">
+                  <div className="flex flex-col sm:flex-row justify-between">
                     <h2 className="text-lg font-medium mb-2">
                       Hackathon Proposal Guidelines
                     </h2>
+                    <div className="flex justify-end mb-2">
+                      <a
+                        href="/Hackathon_Proposal_Guidelines.pdf"
+                        download="RAIN_Hackathon_Proposal_Guidelines.pdf"
+                        className="py-2 px-4 w-fit flex justify-center items-center bg-primary hover:scale-90 active:scale-100 transition duration-200 text-dark rounded cursor-pointer"
+                      >
+                        <span className="flex justify-center items-center">
+                          Download PDF{" "}
+                          <Image
+                            src={icon}
+                            alt={``}
+                            width={16}
+                            height={16}
+                            className="ml-2 flex w-5 h-5 rotate-90 aspect-square rounded-full bg-black"
+                          />
+                        </span>
+                      </a>
+                    </div>
+                  </div>
                     <embed
                       src="/Hackathon_Proposal_Guidelines.pdf"
                       type="application/pdf"
@@ -393,7 +425,7 @@ export default function Registration() {
                     <button
                       onClick={() => setStep(1)}
                       type="button"
-                      className="w-full max-w-[200px] ml-auto py-2 px-4 bg-primary hover:scale-90 active:scale-100 transition duration-200 rounded"
+                      className="w-fit max-w-[200px] ml-auto py-2 px-4 bg-primary hover:scale-90 active:scale-100 transition duration-200 rounded"
                     >
                       <span className="flex justify-center items-center">
                         Continue{" "}
@@ -409,7 +441,6 @@ export default function Registration() {
                   </div>
                 </div>
               )}
-              {step > 0 && <StepIndicator currentStep={step} />}
               {step === 1 && (
                 <Step1
                   formData={formData}

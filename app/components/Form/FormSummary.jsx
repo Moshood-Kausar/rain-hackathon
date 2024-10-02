@@ -1,8 +1,14 @@
 import { LoadingIndicator } from "@/app/assets/svg";
 import Image from "next/image";
 import icon from "@/app/assets/Register-icon.svg";
+import { useState } from "react";
 
 export const SummaryPage = ({ formData, setStep, loading }) => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
+  };
   return (
     <div className="space-y-5">
       <h2 className="font-medium text-lg md:text-xl">Summary</h2>
@@ -90,7 +96,7 @@ export const SummaryPage = ({ formData, setStep, loading }) => {
       <section className="space-y-3.5">
         <div className="flex justify-between">
           <h3 className="text-dark font-medium text-base md:text-lg">
-            Specialization & Proposal Submission
+            Project Focus & Proposal Submission
           </h3>
           <button
             className="text-primary font-medium text-lg underline underline-offset-2 hover:opacity-70"
@@ -101,19 +107,24 @@ export const SummaryPage = ({ formData, setStep, loading }) => {
         </div>
         <div className="space-y-7">
           <div className="space-y-2">
-            <p className="text-[#4C4C4C]">Area of Specialization</p>
+            <p className="text-[#4C4C4C]">Thematic Area of Project Focus</p>
             <p className="text-[#323232]">{formData.area_of_specialization}</p>
           </div>
           <div className="space-y-2">
             <p className="text-[#4C4C4C]">Uploaded Document</p>
             <p className="text-[#323232]">{formData.project_file?.name}</p>
-        </div>
+          </div>
         </div>
       </section>
 
+      <div className="flex items-center justify-start">
+        <input type="checkbox" name="agree" id="agree" onChange={handleCheckboxChange} />
+        <label htmlFor="agree" className="ml-2 text-sm cursor-pointer">I have read and agree to the terms and conditions for participating in RAIN Hackathon 1.0.</label>
+      </div>
+
       <div className="flex justify-end md:pr-5">
         <button
-          disabled={loading}
+          disabled={loading || !isChecked}
           type="submit"
           className="py-2 px-4 w-full flex justify-center items-center max-w-[116px] bg-primary hover:scale-90 active:scale-100 transition duration-200 text-dark rounded disabled:cursor-not-allowed"
         >
