@@ -50,7 +50,7 @@ export default function Registration() {
     if (e.target.name === "project_file") {
       const file = e.target.files[0];
 
-    const maxFileSize = 2 * 1024 * 1024;
+    const maxFileSize = 5 * 1024 * 1024;
 
     if (file && file.size > maxFileSize) {
       notify("Please select a file less than 2MB.", 'warn');
