@@ -62,7 +62,7 @@ export default function Step3({
           ) : (
             <p className="text-gray-500 text-center flex flex-col justify-center">
               <Cloud />
-              Click to select document (max 2Mb)
+              Click to select document (max 5Mb)
             </p>
           )}
         </label>
