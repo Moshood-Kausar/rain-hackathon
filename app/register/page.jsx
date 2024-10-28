@@ -39,6 +39,7 @@ export default function Registration() {
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
   const [isCountdownVisible, setIsCountdownVisible] = useState(false);
+  const [isRegistrationClosed, setIsRegistrationClosed] = useState(false);
   const [initialRender, setInitialRender] = useState(true);
   const [countdownCheck, setCountdownCheck] = useState(false);
 
@@ -191,9 +192,9 @@ export default function Registration() {
 
       if (difference <= 0) {
         clearInterval(interval);
-        setIsCountdownVisible(false);
+        setIsRegistrationClosed(true);
       } else {
-        setIsCountdownVisible(true);
+        setIsRegistrationClosed(false);
         const days = Math.floor(difference / (1000 * 60 * 60 * 24));
         const hours = Math.floor(
           (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -217,100 +218,17 @@ export default function Registration() {
     setInitialRender(false);
   }, []);
 
-  if (isCountdownVisible) {
+  if (isRegistrationClosed) {
     return (
-      <main className={`${poppins.className} bg-hero min-h-screen`}>
-        <section className="container mx-auto pt-[72px] pb-4 md:pb-[105px] px-4 md:px-10 lg:px-20 bg-[url('/hero-stars.png')] h-screen w-screen relative top-0 left-0">
-          <div className="w-full h-full flex flex-col items-center justify-center">
-            <Image
-              src={logo}
-              alt="RAIN-IN"
-              width={1944}
-              height={728}
-              className="w-[200px] mb-20"
-            />
-
-            <h1 className="text-sm md:text-base text-center mx-auto w-fit h-fit rounded-lg px-4 md:px-[33px] py-[10px] leading-normal text-dark border border-[#4C4E1C] mb-[18px] md:mb-10">
-              Oct 1st - Jan 31st 2025
-            </h1>
-            <p className="text-center mb-5 -mt-3">
-              The registration countdown is on ...
-            </p>
-
-            <div
-              className={`flex justify-between gap-2 md:gap-4 w-full max-w-[370px] md:max-w-fit mx-auto pt-4 md:pt-0`}
-            >
-              <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
-                <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">
-                  {days}
-                </h4>
-                <p className="text-xs md:text-sm text-center">days</p>
-              </div>
-
-              <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
-                <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">
-                  {hours}
-                </h4>
-                <p className="text-xs md:text-sm text-center">hours</p>
-              </div>
-
-              <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
-                <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">
-                  {minutes}
-                </h4>
-                <p className="text-xs md:text-sm text-center md:hidden">mins</p>
-                <p className="text-xs md:text-sm text-center hidden md:block">
-                  minutes
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center p-2 md:p-5 bg-primary min-w-16 md:min-w-24 rounded-lg">
-                <h4 className="w-[30px] md:w-[45px] aspect-square rounded-full bg-white flex items-center justify-center text-xs md:text-xl mb-0.5">
-                  {seconds}
-                </h4>
-                <p className="text-xs md:text-sm text-center md:hidden">secs</p>
-                <p className="text-xs md:text-sm text-center hidden md:block">
-                  seconds
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/"
-              className="bg-primary text-sm text-dark py-3 px-6 rounded-lg mt-8"
-            >
-              Go to Home page
-            </Link>
-          </div>
-
-          <Image
-            src={planet1}
-            width={127}
-            height={123}
-            alt=""
-            className="absolute top-10 md:top-[60px] left-4 md:left-10 animate-bounce-slowTop w-[45px] md:w-[125px]"
-          />
-          <Image
-            src={rocket}
-            width={111}
-            height={104}
-            alt=""
-            className="absolute top-[80%] md:top-[63%] lg:top-1/2 left-4 md:left-10 animate-bounce-slow w-[50px] md:w-[110px]"
-          />
-          <Image
-            src={planet2}
-            width={111}
-            height={104}
-            alt=""
-            className="absolute top-10 right-4 animate-bounce-slow w-[45px] md:w-[110px]"
-          />
-          <Image
-            src={planet1}
-            width={111}
-            height={104}
-            alt=""
-            className="absolute top-2/3 right-12 animate-bounce-slowTop w-[45px] md:w-[110px] md:scale-90"
-          />
-        </section>
+      <main className={`${poppins.className} bg-[url('/stars.png')] min-h-screen flex justify-center items-center`}>
+        <div>
+          <h1 className="font-medium text-xl md:text-2xl mb-2 text-center">
+            Registration Closed!
+          </h1>
+          <p className="text-center">
+          Registration is now closed. We appreciate your interest! <br /> If you&apos;ve registered already, be on the lookout for our updates.
+          </p>
+        </div>
       </main>
     );
   }
